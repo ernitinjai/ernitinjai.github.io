@@ -70,14 +70,10 @@ Ads.prototype.SAMPLE_AD_TAG = 'http://pubads.g.doubleclick.net/gampad/ads?' +
     'vid=short_onecue&correlator=';
 
 Ads.prototype.init = function() {
- 	
-  
-};
-
-Ads.prototype.replay = function() {
   if (this.adResp == '') {
     this.log('Error: please fill in an ad tag');
   } else {
+    this.player.ima.initializeAdDisplayContainer();
     this.player.ima.setContentWithAdsResponse(null, this.adResp, true);
     this.player.ima.requestAds();
     this.player.play();
@@ -94,36 +90,36 @@ Ads.prototype.adsManagerLoadedCallback = function() {
 };
 
 Ads.prototype.onAdEvent = function(event) {
-  window.location.href = 'vpaid2imaevent://'+ event.type;
-  Android.showToast(''+ event.type);
+ 
+  if (navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i)) {
+      window.location.href = 'vpaid2imaevent://'+ event.type;
+  } else if(navigator.userAgent.match(/Android/i)) {
+    Android.showToast(''+ event.type)
+  }
   this.log('Ad event: ' + event.type);
 };
 
 Ads.prototype.vastXML = function(vastResp) {
-	alert("vastResp called "+vastResp);
     this.adResp = atob(vastResp);
-    alert("adResp "+this.adResp);
     if (this.adResp == '') {
-  	alert("Error: please fill in an ad tag");
-    this.log('Error: please fill in an ad tag');
+      this.onAdEvent('allAdsCompleted');
+      this.log('Error: please fill in an ad tag');
   } else {
-  	alert("init ad display container");
+    alert("display container");
     this.player.ima.initializeAdDisplayContainer();
-    alert("init set ad content");
+    
     this.player.ima.setContentWithAdsResponse(null, this.adResp, true);
-    alert("init request ad");
+    
     this.player.ima.requestAds();
-    alert("init player play");
+    
     this.player.play();
   }
-};
 
-Ads.prototype.destroy = function() {
-    this.player.ima.destroy();
 };
 
 Ads.prototype.log = function(message) {
-  //this.console.innerHTML = this.console.innerHTML + '<br/>' + message;
+  this.console.innerHTML = this.console.innerHTML + '<br/>' + message;
 };
 
 Ads.prototype.bind = function(thisObj, fn) {
