@@ -9,7 +9,7 @@
         "adsEnabled": true
         }
       }
-    }'>
+    }'
   <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'/>
   <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm'/>
   <source src="http://vjs.zencdn.net/v/oceans.ogv" type='video/ogg'/>
