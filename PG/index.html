@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="lte-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>videojs-vast-vpaid plugin</title>
+   <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+   <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+   <link href="http://192.168.1.241/PGJS/PG/videojs.vast.vpaid.css" rel="stylesheet">
+   <script src="http://192.168.1.241/PGJS/PG/videojs_4.vast.vpaid.js"></script>
+   <script src="http://192.168.1.241/PGJS/PG/es5-shim.js"></script>
+   <script src="http://192.168.1.241/PGJS/PG/ie8fix.js"></script>
+
+
+
+</head>
+<body>
+    <h3 class="title main">videojs-vast-vpaid plugin </h3>
+    <video id="example_video_1" class="video-js vjs-default-skin"
+    controls preload="auto" width="640" height="264"
+    
+    data-setup='{
+      "plugins": {
+      "vastClient": {
+        "adTagUrl": "https://ads.personagraph.com/ad/med/ss?adv_type=VIDEO&pid=PG-2-500239-00000545&ad_type=VPIMP4&app_name=netorman&app_domain=com.sega.vectormancom&bundle_id=com.ega.vectormancom&appstore_url=https://itunes.apple.com/us/app/id1176426500?mt=8&device_id=236A005B-700F-4889-B9CE-999EAB2B605E&ip=122.23.6.9&ua=Mozilla%2F5.0%20%28Linux%3B%20Android%204.2.1%3B%20Nexus%207%20%20Build%2FJOP40D%29%20AppleWebKit%2F535.19%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F18.0.%201025.166%20%20%20Safari%2F535.19&latitude=%%LATITUDE%%&longitude=%%LONGITUDE%%&cb=%%CACHEBUSTER%%",
+        "adCancelTimeout": 5000,
+        "adsEnabled": true
+        }
+      }
+    }'>
+ 
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a web browser that
+    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+  </p>
+</video>
+                            
+</body>
+
+</html>
