@@ -8,6 +8,9 @@ function initForm(tagObj) {
     //var tagEl = document.getElementById('input.tag-el');
     var videoContainer = document.getElementById('vjs-video-container');
     var videoElement = document.getElementById('video-js');
+    
+    document.getElementsByTagName("video")[0].setAttribute("width", width);
+    document.getElementsByTagName("video")[0].setAttribute("height", height);
 
     videoElement.style.width = width;
     
