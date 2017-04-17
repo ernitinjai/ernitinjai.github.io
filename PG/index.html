@@ -6,18 +6,31 @@
     <title>videojs-vast-vpaid plugin</title>
    <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
    <script src="http://vjs.zencdn.net/4.12/video.js"></script>
-   <link href="http://192.168.1.241/PGJS/PG/videojs.vast.vpaid.css" rel="stylesheet">
    <script src="http://192.168.1.241/PGJS/PG/videojs_4.vast.vpaid.js"></script>
    <script src="http://192.168.1.241/PGJS/PG/es5-shim.js"></script>
    <script src="http://192.168.1.241/PGJS/PG/ie8fix.js"></script>
+   <script src="http://192.168.1.241/PGJS/PG/mydemo.js"></script>
 
 
 
 </head>
 <body>
     <h3 class="title main">videojs-vast-vpaid plugin </h3>
-    <video id="example_video_1" class="video-js vjs-default-skin"
-    controls preload="auto" width="640" height="264"
+    
+                            <div class="twelve columns">
+                                <label for="vast-tag">VAST Tag</label>
+                                <input id="vast-tag" type="text" name="vast-type" class="u-full-width tag-el">
+                            </div>
+                       
+
+                        
+                           
+                                <div id="vjs-video-container" class="vjs-video-container">
+                                <video id="video-js" class="video-js vjs-default-skin"/>
+                                </div>
+                           
+    <!--video id="example_video_1" class="video-js vjs-default-skin"
+    controls autoplay preload="auto" width="840" height="464"
     
     data-setup='{
       "plugins": {
@@ -33,7 +46,17 @@
     To view this video please enable JavaScript, and consider upgrading to a web browser that
     <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
   </p>
-</video>
+</video-->
+
+<script type="text/javascript" >
+  
+
+  initForm({
+     'width' : 1400,
+     'height' : 300,
+     'tagUrl' :'https://ec2-184-72-178-33.compute-1.amazonaws.com/med/samplevast/vast3_all'
+});
+</script>
                             
 </body>
 
