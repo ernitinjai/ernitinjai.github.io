@@ -1,10 +1,10 @@
-function initForm(tagObj) {
+function initForm(width,height,tagUrl) {
 
-    
 
-    var width = tagObj.width; 
-    var height = tagObj.height;
-    var tagUrl = tagObj.tagUrl;   
+
+    //var width = tagObj.width;
+    //var height = tagObj.height;
+    //var tagUrl = tagObj.tagUrl;
     //var tagEl = document.getElementById('input.tag-el');
     var videoContainer = document.getElementById('vjs-video-container');
     var videoElement = document.getElementById('video-js');
