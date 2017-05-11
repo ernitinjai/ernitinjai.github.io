@@ -1,0 +1,191 @@
+<!--
+ Copyright 2014 Google Inc.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ --
+ 
+ <html>
+ <head>
+ <link href="http://vjs.zencdn.net/5.3/video-js.min.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="http://localhost/advanced/style.css" />
+ <link rel="stylesheet" href="http://localhost/advanced/videojs.ads.css" />
+ <link rel="stylesheet" href="http://localhost/advanced/videojs.ima.css" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- GPT Companion Code
+ For more info see
+ https://developers.google.com/interactive-media-ads/docs/companions/companions-gpt -->
+<!-- Initialize the tagging library
+ <script type='text/javascript'>
+ var googletag = googletag || {};
+ googletag.cmd = googletag.cmd || [];
+ (function() {
+ var gads = document.createElement('script');
+ gads.async = true;
+ gads.type = 'text/javascript';
+ gads.src = '//www.googletagservices.com/tag/js/gpt.js';
+ var node = document.getElementsByTagName('script')[0];
+ node.parentNode.insertBefore(gads, node);
+ })();
+ </script>-->
+
+<!-- Register your companion slots
+ <script type='text/javascript'>
+ googletag.cmd.push(function() {
+ // Supply YOUR_NETWORK/YOUR_UNIT_PATH in place of 6062/iab_vast_samples.
+ googletag.defineSlot('/6062/iab_vast_samples', [728, 90], 'ima-sample-companionDiv')
+ .addService(googletag.companionAds())
+ .addService(googletag.pubads());
+ googletag.companionAds().setRefreshUnfilledSlots(true);
+ googletag.pubads().enableVideoAds();
+ googletag.enableServices();
+ });
+ </script>--
+ 
+ 
+ <title>Video.js ima Plugin</title>
+ </head>
+ <body>
+ <div id="ima-sample-container">
+ <!-- <header>PG HTML5 SDK Advanced Demo</header>
+ 
+ <center>
+ <label for="tag">Tag (<span id="sampleAdTag" class="urlLink">sample</span>):&nbsp;</label>
+ <input type="text" size="75" id="tagInput" />
+ </center> --
+ 
+ <div id="ima-sample-videoplayer">
+ <video id="content_video" class="video-js vjs-default-skin" playsinline>
+ <!--<source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4"
+ type="video/mp4" ></source> --
+ </video>
+ </div>
+ 
+ <!-- Declare a div where you want the companion to appear. Use
+ googletag.display() to make sure the ad is displayed.
+ <div id="ima-sample-companionDiv">
+ <script type="text/javascript">
+ // Using the command queue to enable asynchronous loading.
+ // The unit will not actually display now - it will display when
+ // the video player is displaying the ads.
+ // googletag.cmd.push(function() { googletag.display('ima-sample-companionDiv'); });
+ </script>
+ </div>
+ 
+ <!--  <div id="ima-sample-console">
+ Welcome to PG HTML5 SDK Demo!
+ </div> -->
+
+<!-- <footer>Copyright (C) Personagraph</footer> --
+ </div>
+ <script src="http://vjs.zencdn.net/5.3/video.min.js"></script>
+ <script src="http://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+ <script src="http://pg-sdk-videos.s3.amazonaws.com/advance/videojs.ads.js"></script>
+ <script src="http://localhost/advanced/videojs.ima.js"></script>
+ <script src="http://localhost/advanced/ads.js"></script>
+ <script type="text/javascript">
+ var ads = new Ads();
+ </script>
+ </body>
+ </html> -->
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="lte-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <title>videojs-vast-vpaid plugin</title>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+            <!-- VideoJs required styles-->
+            <link rel="stylesheet" type="text/css" href="http://vjs.zencdn.net/5.3/video-js.min.css"/>
+            <script type="text/javascript" src="http://vjs.zencdn.net/5.3/video.min.js"></script>
+            <!--<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8086/demo/videojs_4/video-js.css"/ -->
+            <!-- VideoJs.vast.vpaid required styles-->
+            <link rel="stylesheet" type="text/css" href="http://127.0.0.1/videojs.vast.vpaid.css"/>
+            <link rel="stylesheet" type="text/css" href="http://127.0.0.1/style.css"/>
+            
+            <!-- DEMO required styles-->
+            <link rel="stylesheet" type="text/css" href="http://127.0.0.1/videojs.pgads.css"/>
+            <link rel="stylesheet" type="text/css" href="http://127.0.0.1/videojs.ads.css"/>
+            
+            <!-- Web Fonts -->
+            
+            <!-- VideoJs required scripts-->
+            </head>
+    <body>
+        <div id="pg-sample-container">
+            <!-- <header>PG HTML5 SDK Advanced Demo</header>
+             
+             <center>
+             <label for="tag">Tag (<span id="sampleAdTag" class="urlLink">sample</span>):&nbsp;</label>
+             <input type="text" size="75" id="tagInput" />
+             </center> -->
+            
+            <div id="pg-sample-videoplayer">
+                <video id="content_video"  style="width: 300px; height: 150px;" class="video-js vjs-default-skin" poster="http://vjs.zencdn.net/v/oceans.png" playsinline>
+                    <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'/>
+                </video>                <!-- <video id="example_video_1" class="video-js vjs-default-skin"
+                 controls preload="auto" width="640" height="264"
+                 poster="http://vjs.zencdn.net/v/oceans.png"
+                 data-setup='{
+                 "plugins": {
+                 "vastClient": {
+                 "adTagUrl": "http://ads.personagraph.com/ad/med/ss?pid=PG-2-228-00000220&ip=24.115.255.255&ua=Mozilla%2F5.0%20%28iPad%3B%20CPU%20OS%208_4%20like%20Mac%20OS%20X%29%20AppleWebKit%2F600.1.4%20%28KHTML%2C%20like%20Gecko%29%20Mobile%2F12H143&device_id=07c20fdf-d97c-4c36-96e1-3a7951167dfb&limit_ad_track=true&ad_format=ALL&lang=en&st=mobile_app&os_type=IOS&portrait=true&device_make=Apple&device_model=iPad3,1&app_name=PGMSDKSample&app_ver=1.0&bundle_id=com.47Billion.monetizeSDKTest&screen_width=768&screen_height=1024&sdk_version=1.2.2&access_token=33323f57-e882-4c1e-a221-f854017ac932&app_domain=mygame.pg.com&adv_type=VIDEO&res_type=VAST&ad_type=VPIMP4&app_privacy=1&cb=234430",
+                 "adCancelTimeout": 5000,
+                 "adsEnabled": true
+                 }
+                 }
+                 }'>
+                 <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'/>
+                 <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm'/>
+                 <source src="http://vjs.zencdn.net/v/oceans.ogv" type='video/ogg'/>
+                 <p class="vjs-no-js">
+                 To view this video please enable JavaScript, and consider upgrading to a web browser that
+                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                 </p>
+                 </video>-->
+            </div>
+            
+            <!-- Declare a div where you want the companion to appear. Use
+             googletag.display() to make sure the ad is displayed. -->
+            <div id="pg-sample-companionDiv">
+                
+            </div>
+            
+            <div id="pg-sample-console"> 
+            </div>
+            <!--  <div id="ima-sample-console">
+             Welcome to PG HTML5 SDK Demo!
+             </div> -->
+            <!-- VideoJs.vast.vpaid required scripts-->
+             <!-- VideoJs required scripts-->
+            <!--<script type="text/javascript" src="http://127.0.0.1:8086/demo/videojs_5/video.js"></script> -->
+            <script type="text/javascript" src="http://127.0.0.1/es5-shim.js"></script>
+            <script type="text/javascript" src="http://127.0.0.1/ie8fix.js"></script>
+            <script type="text/javascript" src="http://127.0.0.1/videojs_5.vast.vpaid.js"></script>
+            <script type="text/javascript" src="http://127.0.0.1/videojs.ads.js"></script>
+            <script type="text/javascript" src="http://127.0.0.1/videojs.pgads.js"></script>
+            <script type="text/javascript" src="http://127.0.0.1/pgads.js"></script>
+
+            <!-- DEMO required scripts -->
+            <script type="text/javascript" src="http://127.0.0.1/ads.js"></script>
+            
+            <script type="text/javascript"> var ads = new Ads();</script>
+             <script type="text/javascript"> ads.vastXML();</script>
+
+            <!-- <footer>Copyright (C) Personagraph</footer> -->
+        </div>
+        
+        
+    </body>
+    
+</html>
