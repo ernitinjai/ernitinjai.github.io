@@ -128,6 +128,7 @@ Ads.prototype.vastXML = function(vastResp) {
     this.player.pgads.setContentWithAdsResponse(null, this.adResp, true);
 
     this.player.pgads.requestAds();
+     this.player.play();
   }
 
 };
