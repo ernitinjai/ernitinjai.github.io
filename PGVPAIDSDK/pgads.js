@@ -291,6 +291,8 @@ pgads.getEventsCallback = function(eventsData,key) {
 
 //////AdsLoader
 pgads.AdsLoader = function (adDisplayContainer,player) {
+	
+	alert('AdsLoader 1');
 	this.player = player;
 	this.adsLoaderEvents = [];
     selfAdsLoader = this;
