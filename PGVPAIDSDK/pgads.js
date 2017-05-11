@@ -309,7 +309,7 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
               //"url" : "http://127.0.0.1/vast3_all.xml"
         };
 		this.player.vastClient(adPluginOpts);
-		
+		alert('AdsLoader function');
 		pgads.getEventsCallback(this.adsLoaderEvents,pgads.AdEvent.Type.ADS_MANAGER_LOADED)();
 	};
 
