@@ -115,6 +115,7 @@ Ads.prototype.onAdEvent = function(event) {
 };
 
 Ads.prototype.vastXML = function(vastResp) {
+   alert('vastxml function');
     this.adResp = 'xml'; //atob(vastResp);
     if (this.adResp == '') {
       this.onAdEvent('allAdsCompleted');
