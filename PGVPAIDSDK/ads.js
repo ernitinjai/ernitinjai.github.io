@@ -63,7 +63,7 @@ Ads.prototype.vastXML = function(vastResp) {
     pgads.AdEvent.Type.LOADED,
     pgads.AdEvent.Type.MIDPOINT,
     pgads.AdEvent.Type.PAUSED,
-    pgads.AdEvent.Type.STARTED,
+   // pgads.AdEvent.Type.STARTED,
     pgads.AdEvent.Type.THIRD_QUARTILE,
     pgads.AdEvent.Type.STOPPED,
   ];
