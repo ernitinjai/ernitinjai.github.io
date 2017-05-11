@@ -372,7 +372,7 @@
      * @private
      */
     this.onContentPauseRequested_ = function(adEvent) {
-      alert('onContentPauseRequested_');
+      //alert('onContentPauseRequested_');
       this.adsActive = true;
       this.adPlaying = true;
       this.player.off('ended', this.localContentEndedListener);
