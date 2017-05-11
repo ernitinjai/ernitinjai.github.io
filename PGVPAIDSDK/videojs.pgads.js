@@ -443,7 +443,7 @@
      * @private
      */
    var onAdLoaded_ = function(adEvent) {
-    alert('onAdLoaded_');
+    //alert('onAdLoaded_');
       if (!adEvent.isLinear()) {
         this.player.play();
       }
@@ -456,7 +456,7 @@
      * @private
      */
     var onAdStarted_ = function(adEvent) {
-      alert('onAdStarted_');
+      //alert('onAdStarted_');
       this.currentAd = adEvent.getAd();
       this.currentAdEventInfo = adEvent;
       //TODO:
