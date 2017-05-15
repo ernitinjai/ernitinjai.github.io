@@ -176,11 +176,11 @@
 }
 
 .pg-playing:before {
-  content : url("http://192.168.1.244/PGVPAIDSDK/pause.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/pause.png");
 }
 
 .pg-paused:before {
-  content : url("http://192.168.1.244/PGVPAIDSDK/play.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/play.png");
 }
 
 .pg-playing:hover:before, .pg-paused:hover:before {
@@ -188,11 +188,11 @@
 }
 
 .pg-non-muted:before {
-  content : url("http://192.168.1.244/PGVPAIDSDK/sound.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/sound.png");
 }
 
 .pg-muted:before {
-  content : url("http://192.168.1.244/PGVPAIDSDK/mute.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/mute.png");
 }
 
 .pg-non-muted:hover:before, .pg-muted:hover:before {
@@ -200,11 +200,11 @@
 }
 
 .pg-non-fullscreen:before {
-  content : url("http://192.168.1.244/PGVPAIDSDK/expand.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
 }
 
 .pg-fullscreen:before {
-  content : url("http://192.168.1.244/PGVPAIDSDK/expand.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
 }
 
 .pg-non-fullscreen:hover:before, .pg-fullscreen:hover:before {
