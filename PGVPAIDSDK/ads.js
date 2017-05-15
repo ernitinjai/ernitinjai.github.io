@@ -107,9 +107,9 @@ Ads.prototype.onAdEvent = function(event) {
  
   if (navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/iPad/i)) {
-      window.location.href = 'vpaid2imaevent://'+ event.type;
+      //window.location.href = 'vpaid2imaevent://'+ event.type;
   } else if(navigator.userAgent.match(/Android/i)) {
-    Android.showToast(''+ event.type)
+    //Android.showToast(''+ event.type)
   }
   this.log('Ad event: ' + event.type);
 };
