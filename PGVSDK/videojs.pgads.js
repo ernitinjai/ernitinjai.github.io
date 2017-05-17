@@ -132,25 +132,26 @@
       assignControlAttributes_(this.countdownDiv, 'pg-countdown-div');
       this.countdownDiv.innerHTML = this.settings.adLabel;
       this.countdownDiv.style.display = this.showCountdown ? 'block' : 'none';
-      this.seekBarDiv = document.createElement('div');
-      assignControlAttributes_(this.seekBarDiv, 'pg-seek-bar-div');
-      this.seekBarDiv.style.width = '100%';
-      this.progressDiv = document.createElement('div');
-      assignControlAttributes_(this.progressDiv, 'pg-progress-div');
       this.playPauseDiv = document.createElement('div');
       assignControlAttributes_(this.playPauseDiv, 'pg-play-pause-div');
-      addClass_(this.playPauseDiv, 'pg-playing');
+//      addClass_(this.playPauseDiv, 'pg-playing');
       this.playPauseDiv.addEventListener(
           'click',
           onAdPlayPauseClick_,
           false);
       this.muteDiv = document.createElement('div');
       assignControlAttributes_(this.muteDiv, 'pg-mute-div');
-      addClass_(this.muteDiv, 'pg-non-muted');
+//      addClass_(this.muteDiv, 'pg-non-muted');
       this.muteDiv.addEventListener(
           'click',
           onAdMuteClick_,
           false);
+        
+      this.seekBarDiv = document.createElement('div');
+      assignControlAttributes_(this.seekBarDiv, 'pg-seek-bar-div');
+      this.seekBarDiv.style.width = '100%';
+      this.progressDiv = document.createElement('div');
+      assignControlAttributes_(this.progressDiv, 'pg-progress-div');
       this.sliderDiv = document.createElement('div');
       assignControlAttributes_(this.sliderDiv, 'pg-slider-div');
       this.sliderDiv.addEventListener(
@@ -159,26 +160,34 @@
           false);
       this.sliderLevelDiv = document.createElement('div');
       assignControlAttributes_(this.sliderLevelDiv, 'pg-slider-level-div');
+      
+      this.learnMoreDiv = document.createElement('div');
+      assignControlAttributes_(this.learnMoreDiv, 'pg-learnmore-div');
+      this.learnMoreDiv.innerHTML = "Learn More";
       this.fullscreenDiv = document.createElement('div');
       assignControlAttributes_(this.fullscreenDiv, 'pg-fullscreen-div');
-      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
+//      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
       this.fullscreenDiv.addEventListener(
           'click',
           onAdFullscreenClick_,
           false);
+        
       this.adContainerDiv.appendChild(this.controlsDiv);
-
+      this.adContainerDiv.appendChild(this.seekBarDiv);    
       this.adContainerDiv.appendChild(this.controlsTopDiv);
       
       
       this.controlsDiv.appendChild(this.playPauseDiv);
+      this.controlsDiv.appendChild(this.countdownDiv);
       this.controlsDiv.appendChild(this.muteDiv);
-      this.controlsDiv.appendChild(this.sliderDiv);
+//      this.controlsDiv.appendChild(this.sliderDiv);
+      this.controlsTopDiv.appendChild(this.learnMoreDiv);
       this.controlsTopDiv.appendChild(this.fullscreenDiv);
+        
       this.seekBarDiv.appendChild(this.progressDiv);
       this.sliderDiv.appendChild(this.sliderLevelDiv);
-      this.controlsDiv.appendChild(this.countdownDiv);
-      this.controlsDiv.appendChild(this.seekBarDiv);
+      
+//      this.controlsDiv.appendChild(this.seekBarDiv);
     }.bind(this);
 
     /**
@@ -398,7 +407,7 @@
       if ((contentType === 'application/javascript') && !this.settings.showControlsForJSAds) {
         this.controlsDiv.style.display = 'none';
       } else {
-        this.controlsDiv.style.display = 'block';
+        this.controlsDiv.style.display = 'flex';
       }
 
       this.vjsControls.hide();
@@ -564,9 +573,9 @@
      */
     var showAdControls_ = function() {
       this.controlsDiv.style.height = '37px';
-      this.playPauseDiv.style.display = 'block';
-      this.muteDiv.style.display = 'block';
-      this.sliderDiv.style.display = 'block';
+//      this.playPauseDiv.style.display = 'block';
+//      this.muteDiv.style.display = 'block';
+//      this.sliderDiv.style.display = 'block';
       this.fullscreenDiv.style.display = 'block';
     }.bind(this);
 
@@ -684,8 +693,8 @@
      */
     var onFullscreenChange_ = function() {
       if (this.player.isFullscreen()) {
-        addClass_(this.fullscreenDiv, 'pg-fullscreen');
-        removeClass_(this.fullscreenDiv, 'pg-non-fullscreen');
+//        addClass_(this.fullscreenDiv, 'pg-fullscreen');
+//        removeClass_(this.fullscreenDiv, 'pg-non-fullscreen');
         if (this.adsManager) {
           this.adsManager.resize(
               window.screen.width,
@@ -693,8 +702,8 @@
               pgads.ViewMode.FULLSCREEN);
         }
       } else {
-        addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
-        removeClass_(this.fullscreenDiv, 'pg-fullscreen');
+//        addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
+//        removeClass_(this.fullscreenDiv, 'pg-fullscreen');
         if (this.adsManager) {
           this.adsManager.resize(
               this.getPlayerWidth(),
