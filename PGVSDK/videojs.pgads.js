@@ -391,7 +391,7 @@
      * @private
      */
     this.onContentPauseRequested_ = function(adEvent) {
-      alert('onContentPauseRequested_');
+      //alert('onContentPauseRequested_');
       this.adsActive = true;
       this.adPlaying = true;
       this.player.off('ended', this.localContentEndedListener);
@@ -462,7 +462,7 @@
      * @private
      */
    var onAdLoaded_ = function(adEvent) {
-    alert('onAdLoaded_');
+    //alert('onAdLoaded_');
       if (!adEvent.isLinear()) {
         this.player.play();
       }
@@ -475,7 +475,7 @@
      * @private
      */
     var onAdStarted_ = function(adEvent) {
-      alert('onAdStarted_');
+      //alert('onAdStarted_');
       this.currentAd = adEvent.getAd();
       this.currentAdEventInfo = adEvent;
       //TODO:
