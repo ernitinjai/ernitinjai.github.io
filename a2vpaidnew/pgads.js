@@ -351,7 +351,7 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
               "vpaidFlashLoaderPath":'/VPAIDFlash.swf',
               //"adTagXML":this.adResp
               //"adTagUrl":'https://ads.personagraph.com/ad/med/ss?app_name=Wiz+Khalifa%27s+Weed+Farm&player_width=1212&player_height=640&ip=162.233.130.60&cb=15354200772&adv_type=VIDEO&pid=PG-1102-19066-00000477&ad_type=VPIMP4&bundle_id=com.wiz.weed.game&appstore_url=&vpaid=true&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E304&device_id=E5809BB5-C699-4905-B053-2C55280592A6&app_domain='
-              //"adTagUrl" : 'http://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25'
+              //"adTagUrl" : 'https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25'
               "adTagUrl" : 'https://v.lkqd.net/ad?pid=105&sid=205108&output=vastvpaid&support=html5flash&execution=any&placement=&playinit=auto&volume=0&width=[WIDTH]&height=[HEIGHT]&dnt=[DO_NOT_TRACK]&pageurl=[PAGEURL]&contentid=[CONTENT_ID]&contenttitle=[CONTENT_TITLE]&contentlength=[CONTENT_LENGTH]&contenturl=[CONTENT_URL]&rnd=[CACHEBUSTER]'
               //"adTagUrl" : "http://servedby.flashtalking.com/imp/1/31714;812030;208;xml;DailyMail;640x360VASTHTML5/?cachebuster=%%CACHEBUSTER%%"
               //"adTagUrl" : "https://ad3.liverail.com/?LR_PUBLISHER_ID=1331&LR_CAMPAIGN_ID=229&LR_SCHEMA=vast2-vpaid&LR_FORMAT=application/javascript"
