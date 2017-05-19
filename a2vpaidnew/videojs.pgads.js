@@ -122,29 +122,36 @@
       this.controlsDiv = document.createElement('div');
       assignControlAttributes_(this.controlsDiv, 'pg-controls-div');
       this.controlsDiv.style.width = '100%';
+
+      this.controlsTopDiv = document.createElement('div');
+      assignControlAttributes_(this.controlsTopDiv, 'pg-top-controls-div');
+      this.controlsTopDiv.style.width = '100%';
+
+
       this.countdownDiv = document.createElement('div');
       assignControlAttributes_(this.countdownDiv, 'pg-countdown-div');
       this.countdownDiv.innerHTML = this.settings.adLabel;
       this.countdownDiv.style.display = this.showCountdown ? 'block' : 'none';
-      this.seekBarDiv = document.createElement('div');
-      assignControlAttributes_(this.seekBarDiv, 'pg-seek-bar-div');
-      this.seekBarDiv.style.width = '100%';
-      this.progressDiv = document.createElement('div');
-      assignControlAttributes_(this.progressDiv, 'pg-progress-div');
       this.playPauseDiv = document.createElement('div');
       assignControlAttributes_(this.playPauseDiv, 'pg-play-pause-div');
-      addClass_(this.playPauseDiv, 'pg-playing');
+//      addClass_(this.playPauseDiv, 'pg-playing');
       this.playPauseDiv.addEventListener(
           'click',
           onAdPlayPauseClick_,
           false);
       this.muteDiv = document.createElement('div');
       assignControlAttributes_(this.muteDiv, 'pg-mute-div');
-      addClass_(this.muteDiv, 'pg-non-muted');
+//      addClass_(this.muteDiv, 'pg-non-muted');
       this.muteDiv.addEventListener(
           'click',
           onAdMuteClick_,
           false);
+        
+      this.seekBarDiv = document.createElement('div');
+      assignControlAttributes_(this.seekBarDiv, 'pg-seek-bar-div');
+      this.seekBarDiv.style.width = '100%';
+      this.progressDiv = document.createElement('div');
+      assignControlAttributes_(this.progressDiv, 'pg-progress-div');
       this.sliderDiv = document.createElement('div');
       assignControlAttributes_(this.sliderDiv, 'pg-slider-div');
       this.sliderDiv.addEventListener(
@@ -153,22 +160,34 @@
           false);
       this.sliderLevelDiv = document.createElement('div');
       assignControlAttributes_(this.sliderLevelDiv, 'pg-slider-level-div');
+      
+      this.learnMoreDiv = document.createElement('div');
+      assignControlAttributes_(this.learnMoreDiv, 'pg-learnmore-div');
+      this.learnMoreDiv.innerHTML = "Learn More";
       this.fullscreenDiv = document.createElement('div');
       assignControlAttributes_(this.fullscreenDiv, 'pg-fullscreen-div');
-      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
+//      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
       this.fullscreenDiv.addEventListener(
           'click',
           onAdFullscreenClick_,
           false);
+        
       this.adContainerDiv.appendChild(this.controlsDiv);
-      this.controlsDiv.appendChild(this.countdownDiv);
-      this.controlsDiv.appendChild(this.seekBarDiv);
+      this.adContainerDiv.appendChild(this.seekBarDiv);    
+      this.adContainerDiv.appendChild(this.controlsTopDiv);
+      
+      
       this.controlsDiv.appendChild(this.playPauseDiv);
+      this.controlsDiv.appendChild(this.countdownDiv);
       this.controlsDiv.appendChild(this.muteDiv);
-      this.controlsDiv.appendChild(this.sliderDiv);
-      this.controlsDiv.appendChild(this.fullscreenDiv);
+//      this.controlsDiv.appendChild(this.sliderDiv);
+      this.controlsTopDiv.appendChild(this.learnMoreDiv);
+      this.controlsTopDiv.appendChild(this.fullscreenDiv);
+        
       this.seekBarDiv.appendChild(this.progressDiv);
       this.sliderDiv.appendChild(this.sliderLevelDiv);
+      
+//      this.controlsDiv.appendChild(this.seekBarDiv);
     }.bind(this);
 
     /**
