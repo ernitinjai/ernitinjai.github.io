@@ -108,13 +108,15 @@ Ads.prototype.adsManagerLoadedCallback = function() {
 
 Ads.prototype.onAdEvent = function(event) {
  
-  /*if (navigator.userAgent.match(/iPhone/i) ||
+  if (navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/iPad/i)) {
-      window.location.href = 'vpaid2imaevent://'+ event.type;
+      //window.location.href = 'vpaid2imaevent://'+ event.type;
+    //alert('ios');
   } else if(navigator.userAgent.match(/Android/i)) {
-    Android.showToast(''+ event.type)
-  }*/
-  //this.log('Ad event: ' + event.type);
+    //Android.showToast(''+ event.type);
+    //alert('android');
+  }
+  this.log('Ad event: ' + event.type);
 };
 
 Ads.prototype.vastXML = function(vastResp) {
@@ -134,6 +136,13 @@ Ads.prototype.vastXML = function(vastResp) {
   }
 
 };
+Ads.prototype.play = function () {
+  var videoArr = document.getElementsByTagName('video');
+  if (videoArr.length > 0) {
+      video = videoArr[0];
+      video.play();
+  }
+}
 
 Ads.prototype.log = function(message) {
   this.console.innerHTML = this.console.innerHTML + '<br/>' + message;

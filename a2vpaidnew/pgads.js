@@ -84,6 +84,10 @@ pgads.AdEventInfo = function(eventType,adsManager) {
 		return 0;
 	}
 
+	this.getPodIndex = function () {
+		return 0;
+	}
+
 	this.getTotalAds = function () {
 		return this.adsManager.adPodInfo.length;
 	}
@@ -179,18 +183,14 @@ pgads.AdsManager =  function(player){
 	};
 
 	this.pause = function () {
-		//this.player.pause();
-		adManagerObj.player.vast.adUnit.pauseAd();
+		//adManagerObj.player.vast.adUnit.pauseAd();
 		//adManagerObj.player.trigger('pause');
-		//adManagerObj.player.pause();
+		adManagerObj.player.pause();
 	}
-	
-	this.player.on('pause', function () {
-		adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_PAUSE_REQUESTED);
-	});
 
-	this.player.on('canplay', function () {
-		//alert(this.vast.vastResponse.ads[0].inLine.creatives.Length);
+	this.player.on('pause', function () {
+		 adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_PAUSE_REQUESTED);
+		 adManagerObj.player.off('pause');
 	});
 
 	this.player.on('loadedmetadata', function () {
@@ -198,12 +198,11 @@ pgads.AdsManager =  function(player){
 	});
 
 	this.player.on('error',function () {
-		alert('error');
 		adManagerObj.sendCallback(pgads.AdEvent.Type.AD_ERROR);
 	});
 
 	this.player.on('ended', function () {
-		 //alert('ended');
+		 alert('ended');
    });
 
 	this.player.on('fullscreenchange', function() {
@@ -219,19 +218,37 @@ pgads.AdsManager =  function(player){
 		adManagerObj.sendCallback(pgads.AdEvent.Type.LOADED);
 	});
 
+	this.player.on('vpaid.AdSkipped', function() {
+		alert('adskip');
+        adManagerObj.sendCallback(pgads.AdEvent.Type.SKIPPED);
+	});
+
 	this.player.on('vpaid.AdStarted', function() {
+
+		//handle event bubble issue that cause pause our video
+		//setTimeout(function(){ adManagerObj.playVideoAfterPause() }, 12000);
+
+
 		if(this.vast.vastResponse != 'undefined'); {
        		 adManagerObj.vastResponse = this.vast.vastResponse;
     	}
         if(this.vast.vastResponse.ads != 'undefined'); {
     		adManagerObj.adPodInfo = this.vast.vastResponse.ads;
         }
-		
         adManagerObj.sendCallback(pgads.AdEvent.Type.STARTED);
-
 	});
 
+	this.playVideoAfterPause = function() {
+		var videoArr = document.getElementsByTagName('video');
+		  if (videoArr.length > 0) {
+		      video = videoArr[0];
+		      video.play();
+		  }
+	};
+
 	this.player.on('vpaid.AdStopped', function() {
+				//alert('stopped');
+
 		if(adManagerObj.player.currentSrc()) {
 			adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED);	
     	} else {
@@ -256,6 +273,7 @@ pgads.AdsManager =  function(player){
     });
 
 	this.player.on('vpaid.AdPaused', function() {
+		//alert('pause');
 		adManagerObj.sendCallback(pgads.AdEvent.Type.PAUSED);
 	});
 
@@ -330,11 +348,14 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
               "adsEnabled": true,
               "autoResize":true,
               "verbosity":4,
+              "vpaidFlashLoaderPath":'/VPAIDFlash.swf',
               //"adTagXML":this.adResp
-              //"url":'https://ads.personagraph.com/ad/med/ss?app_name=Wiz+Khalifa%27s+Weed+Farm&player_width=1212&player_height=640&ip=162.233.130.60&cb=15354200772&adv_type=VIDEO&pid=PG-1102-19066-00000477&ad_type=VPIMP4&bundle_id=com.wiz.weed.game&appstore_url=&vpaid=true&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E304&device_id=E5809BB5-C699-4905-B053-2C55280592A6&app_domain='
-              "url" : 'https://v.lkqd.net/ad?pid=105&sid=205108&output=vastvpaid&support=html5flash&execution=any&placement=&playinit=auto&volume=0&width=[WIDTH]&height=[HEIGHT]&dnt=[DO_NOT_TRACK]&pageurl=[PAGEURL]&contentid=[CONTENT_ID]&contenttitle=[CONTENT_TITLE]&contentlength=[CONTENT_LENGTH]&contenturl=[CONTENT_URL]&rnd=[CACHEBUSTER]'
-              //"url" : 'https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25'
-              //"url" : "http://127.0.0.1/vast3_all.xml"
+              //"adTagUrl":'https://ads.personagraph.com/ad/med/ss?app_name=Wiz+Khalifa%27s+Weed+Farm&player_width=1212&player_height=640&ip=162.233.130.60&cb=15354200772&adv_type=VIDEO&pid=PG-1102-19066-00000477&ad_type=VPIMP4&bundle_id=com.wiz.weed.game&appstore_url=&vpaid=true&ua=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+10_3_1+like+Mac+OS+X%29+AppleWebKit%2F603.1.30+%28KHTML%2C+like+Gecko%29+Mobile%2F14E304&device_id=E5809BB5-C699-4905-B053-2C55280592A6&app_domain='
+              "adTagUrl" : 'https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25'
+              //"adTagUrl" : 'https://v.lkqd.net/ad?pid=105&sid=205108&output=vastvpaid&support=html5flash&execution=any&placement=&playinit=auto&volume=0&width=[WIDTH]&height=[HEIGHT]&dnt=[DO_NOT_TRACK]&pageurl=[PAGEURL]&contentid=[CONTENT_ID]&contenttitle=[CONTENT_TITLE]&contentlength=[CONTENT_LENGTH]&contenturl=[CONTENT_URL]&rnd=[CACHEBUSTER]'
+              //"adTagUrl" : "http://servedby.flashtalking.com/imp/1/31714;812030;208;xml;DailyMail;640x360VASTHTML5/?cachebuster=%%CACHEBUSTER%%"
+              //"adTagUrl" : "https://ad3.liverail.com/?LR_PUBLISHER_ID=1331&LR_CAMPAIGN_ID=229&LR_SCHEMA=vast2-vpaid&LR_FORMAT=application/javascript"
+              //"adTagUrl":"http://127.0.0.1/VASTAdXML.xml"
         };
 		var vastcli = this.player.vastClient(adPluginOpts);
 
