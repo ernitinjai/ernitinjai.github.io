@@ -50,33 +50,7 @@
   overflow: hidden;
 /*  display: none;*/
   opacity: 1;
-  background-color: rgba(7, 20, 30, .7);
-  background: -moz-linear-gradient(
-      bottom,
-      rgba(7, 20, 30, .7) 0%,
-      rgba(7, 20, 30, 0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(0%,rgba(7, 20, 30, .7)),
-      color-stop(100%,rgba(7, 20, 30, 0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-      bottom,
-      rgba(7, 20, 30, .7) 0%,
-      rgba(7, 20, 30, 0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(bottom,
-    rgba(7, 20, 30, .7) 0%,
-    rgba(7, 20, 30, 0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(bottom,
-    rgba(7, 20, 30, .7) 0%,
-    rgba(7, 20, 30, 0) 100%); /* IE10+ */
-  background: linear-gradient(to top,
-    rgba(7, 20, 30, .7) 0%,
-    rgba(7, 20, 30, 0) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(
-    startColorstr='#0007141E',
-    endColorstr='#07141E',GradientType=0 ); /* IE6-9 */
+ 
 }
 
 .pg-top-controls-div {
@@ -86,33 +60,7 @@
   overflow: hidden;
   display: block;
   opacity: 1;
-  background-color: rgba(7, 20, 30, .7);
-  background: -moz-linear-gradient(
-      bottom,
-      rgba(7, 20, 30, .7) 0%,
-      rgba(7, 20, 30, 0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(0%,rgba(7, 20, 30, .7)),
-      color-stop(100%,rgba(7, 20, 30, 0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-      bottom,
-      rgba(7, 20, 30, .7) 0%,
-      rgba(7, 20, 30, 0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(bottom,
-    rgba(7, 20, 30, .7) 0%,
-    rgba(7, 20, 30, 0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(bottom,
-    rgba(7, 20, 30, .7) 0%,
-    rgba(7, 20, 30, 0) 100%); /* IE10+ */
-  background: linear-gradient(to top,
-    rgba(7, 20, 30, .7) 0%,
-    rgba(7, 20, 30, 0) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(
-    startColorstr='#0007141E',
-    endColorstr='#07141E',GradientType=0 ); /* IE6-9 */
+  
 }
 
 /*
@@ -186,7 +134,7 @@
 }
 
 .pg-fullscreen-div:before {
-  content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/collapse.png");
 }
 
 .pg-play-pause-div:before{
@@ -217,15 +165,13 @@
   text-shadow: 0 0 1em #fff;
 }
 
-/*
 .pg-non-fullscreen:before {
   content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
 }
 
 .pg-fullscreen:before {
-  content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
+  content : url("https://ernitinjai.github.io/PGVSDK/collapse.png");
 }
-*/
 
 /*
 .pg-non-fullscreen:hover:before, .pg-fullscreen:hover:before {
