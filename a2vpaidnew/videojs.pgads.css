@@ -23,8 +23,9 @@
 }
 
 .video-js {
-  width: 100%;
-  height: 100%;
+/*  width: 100%;*/
+/*  height: 100%;*/
+    z-index: 99;
 }
 /* Move overlay if user fast-clicks play button. */
 .video-js.vjs-playing .bumpable-pg-ad-container {
@@ -47,7 +48,7 @@
   height: 37px;
   position: absolute;
   overflow: hidden;
-  display: none;
+/*  display: none;*/
   opacity: 1;
   background-color: rgba(7, 20, 30, .7);
   background: -moz-linear-gradient(
@@ -78,27 +79,68 @@
     endColorstr='#07141E',GradientType=0 ); /* IE6-9 */
 }
 
-.pg-countdown-div {
-  height: 10px;
-  color: #FFFFFF;
-  text-shadow: 0 0 0.2em #000;
-  cursor: default;
+.pg-top-controls-div {
+  
+  height: 37px;
+  position: absolute;
+  overflow: hidden;
+  display: block;
+  opacity: 1;
+  background-color: rgba(7, 20, 30, .7);
+  background: -moz-linear-gradient(
+      bottom,
+      rgba(7, 20, 30, .7) 0%,
+      rgba(7, 20, 30, 0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0%,rgba(7, 20, 30, .7)),
+      color-stop(100%,rgba(7, 20, 30, 0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+      bottom,
+      rgba(7, 20, 30, .7) 0%,
+      rgba(7, 20, 30, 0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(bottom,
+    rgba(7, 20, 30, .7) 0%,
+    rgba(7, 20, 30, 0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(bottom,
+    rgba(7, 20, 30, .7) 0%,
+    rgba(7, 20, 30, 0) 100%); /* IE10+ */
+  background: linear-gradient(to top,
+    rgba(7, 20, 30, .7) 0%,
+    rgba(7, 20, 30, 0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr='#0007141E',
+    endColorstr='#07141E',GradientType=0 ); /* IE6-9 */
 }
 
+/*
+.pg-countdown-div {
+  height: 10px;
+  color: #8B1F66;
+  text-shadow: 0 0 0.2em #000;
+  cursor: default;
+  text-align: center;
+}
+*/
+
 .pg-seek-bar-div {
-  top: 12px;
+  bottom:0px;
+  
   height: 3px;
   position: absolute;
-  background: rgba(255, 255, 255, .4);
+  background: rgba(0, 255, 255, .4);
 }
 
 .pg-progress-div {
   width: 0px;
   height: 3px;
-  background-color: #ECC546;
+  background-color: #ACC546;
 }
 
-.pg-play-pause-div, .pg-mute-div, .pg-slider-div, .pg-fullscreen-div {
+/*
+.pg-play-pause-div, .pg-mute-div, .pg-slider-div{
   width: 35px;
   height: 20px;
   top: 11px;
@@ -111,38 +153,52 @@
   font-family: VideoJS;
   cursor: pointer;
 }
+*/
 
+/*
 .pg-mute-div {
   left: auto;
-  right: 85px;
+  right: 0px;
 }
+*/
 
 .pg-slider-div {
   left: auto;
-  right: 35px;
-  width: 50px;
-  height: 10px;
+  right: 135px;
+  width: 0px;
+  height: 0px;
   top: 20px;
   background-color: #555555;
 }
 
 .pg-slider-level-div {
   width: 100%;
-  height: 10px;
+  height: 0px;
   background-color: #ECC546;
 }
 
-.pg-fullscreen-div {
-  left: auto;
-  right: 0px;
+.pg-top-controls-div, .pg-controls-div {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.pg-fullscreen-div:before {
+  content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
+}
+
+.pg-play-pause-div:before{
+    content : url("https://ernitinjai.github.io/PGVSDK/pause.png");
 }
 
 .pg-playing:before {
-  content: "\00f103";
+  content : url("https://ernitinjai.github.io/PGVSDK/pause.png");
 }
 
 .pg-paused:before {
-  content: "\00f101";
+  content : url("https://ernitinjai.github.io/PGVSDK/play.png");
 }
 
 .pg-playing:hover:before, .pg-paused:hover:before {
@@ -150,25 +206,29 @@
 }
 
 .pg-non-muted:before {
-  content: "\00f107";
+  content : url("https://ernitinjai.github.io/PGVSDK/sound.png");
 }
 
 .pg-muted:before {
-  content: "\00f104";
+  content : url("https://ernitinjai.github.io/PGVSDK/mute.png");
 }
 
 .pg-non-muted:hover:before, .pg-muted:hover:before {
   text-shadow: 0 0 1em #fff;
 }
 
+/*
 .pg-non-fullscreen:before {
-  content: "\00f108";
+  content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
 }
 
 .pg-fullscreen:before {
-  content: "\00f109";
+  content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
 }
+*/
 
+/*
 .pg-non-fullscreen:hover:before, .pg-fullscreen:hover:before {
   text-shadow: 0 0 1em #fff;
 }
+*/
