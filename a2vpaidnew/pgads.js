@@ -132,6 +132,7 @@ pgads.AdsManager =  function(player){
 	this.vastResponse;
 	this.adPodInfo;
     this.currentPlayerTime;
+    this.adCompleted;
 
 	var adManagerObj = this;
 
@@ -175,7 +176,11 @@ pgads.AdsManager =  function(player){
 	this.resume = function () {
 		//var adEvent = new pgads.AdEventInfo(pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED,adManagerObj);
 		//pgads.getEventsCallback(adManagerObj.adsManagerLoaderEvents,pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED)(adEvent);
-		adManagerObj.player.vast.adUnit.resumeAd();
+		if(this.adCompleted == true) {
+			adManagerObj.player.play();
+		} else {
+			adManagerObj.player.vast.adUnit.resumeAd();
+		}
 	};
 
 	this.destroy = function () {
@@ -183,9 +188,14 @@ pgads.AdsManager =  function(player){
 	};
 
 	this.pause = function () {
+		if(this.adCompleted == true) {
+			adManagerObj.player.pause();
+		} else {
+			adManagerObj.player.vast.adUnit.pauseAd();
+		}
 		//adManagerObj.player.vast.adUnit.pauseAd();
 		//adManagerObj.player.trigger('pause');
-		adManagerObj.player.pause();
+		//adManagerObj.player.pause();
 	}
 
 	this.player.on('pause', function () {
@@ -202,7 +212,7 @@ pgads.AdsManager =  function(player){
 	});
 
 	this.player.on('ended', function () {
-		 alert('ended');
+		 //alert('ended');
    });
 
 	this.player.on('fullscreenchange', function() {
@@ -210,7 +220,7 @@ pgads.AdsManager =  function(player){
 	});
 
 	this.player.on('vpaid.AdClickThru', function () {
-		alert('adclick');
+		//alert('adclick');
 		 adManagerObj.sendCallback(pgads.AdEvent.Type.CLICK);
   	 });
 
@@ -219,18 +229,13 @@ pgads.AdsManager =  function(player){
 	});
 
 	this.player.on('vpaid.AdSkipped', function() {
-		alert('adskip');
+		//alert('adskip');
         adManagerObj.sendCallback(pgads.AdEvent.Type.SKIPPED);
 	});
 
 	this.player.on('vpaid.AdStarted', function() {
-
-		//handle event bubble issue that cause pause our video
-		//setTimeout(function(){ adManagerObj.playVideoAfterPause() }, 12000);
-
-
-		if(this.vast.vastResponse != 'undefined'); {
-       		 adManagerObj.vastResponse = this.vast.vastResponse;
+	if(this.vast.vastResponse != 'undefined'); {
+       		adManagerObj.vastResponse = this.vast.vastResponse;
     	}
         if(this.vast.vastResponse.ads != 'undefined'); {
     		adManagerObj.adPodInfo = this.vast.vastResponse.ads;
@@ -238,22 +243,14 @@ pgads.AdsManager =  function(player){
         adManagerObj.sendCallback(pgads.AdEvent.Type.STARTED);
 	});
 
-	this.playVideoAfterPause = function() {
-		var videoArr = document.getElementsByTagName('video');
-		  if (videoArr.length > 0) {
-		      video = videoArr[0];
-		      video.play();
-		  }
-	};
-
 	this.player.on('vpaid.AdStopped', function() {
 				//alert('stopped');
 
-		if(adManagerObj.player.currentSrc()) {
+		//if(adManagerObj.player.currentSrc()) {
 			adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED);	
-    	} else {
-    		adManagerObj.sendCallback(pgads.AdEvent.Type.ALL_ADS_COMPLETED);
-    	}
+//     	} else {
+//     		adManagerObj.sendCallback(pgads.AdEvent.Type.ALL_ADS_COMPLETED);
+//     	}
 	});
 
 	this.player.on('vpaid.AdVideoFirstQuartile', function() {
@@ -268,6 +265,7 @@ pgads.AdsManager =  function(player){
 		adManagerObj.sendCallback(pgads.AdEvent.Type.THIRD_QUARTILE);
 	});
 	this.player.on('vpaid.AdVideoComplete', function() {
+		adManagerObj.adCompleted = true;
 		adManagerObj.sendCallback(pgads.AdEvent.Type.COMPLETE);
 		//TODO: send content resume callback
     });
