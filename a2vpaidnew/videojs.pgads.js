@@ -420,6 +420,14 @@
      * @private
      */
     this.onContentResumeRequested_ = function(adEvent) {
+      
+      if (navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)) {
+            //send java script error in case of mobile to stop error message while showing ad on mobile
+      this.pauseAd();
+       this.currentAd.isLinear();
+   } 
+      
       this.adsActive = false;
       this.adPlaying = false;
       this.player.on('ended', this.localContentEndedListener);
