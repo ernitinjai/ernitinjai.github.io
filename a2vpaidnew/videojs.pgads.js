@@ -166,7 +166,7 @@
       this.learnMoreDiv.innerHTML = "Learn More";
       this.fullscreenDiv = document.createElement('div');
       assignControlAttributes_(this.fullscreenDiv, 'pg-fullscreen-div');
-//      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
+      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
       this.fullscreenDiv.addEventListener(
           'click',
           onAdFullscreenClick_,
@@ -698,7 +698,7 @@
      */
     var onFullscreenChange_ = function() {
       if (this.player.isFullscreen()) {
-        addClass_(this.fullscreenDiv, 'pg-fullscreen');
+        addClass_(this.fullscreenDiv, 'pg-fullscreen-view');
         removeClass_(this.fullscreenDiv, 'pg-non-fullscreen');
         if (this.adsManager) {
           this.adsManager.resize(
@@ -708,7 +708,7 @@
         }
       } else {
         addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
-        removeClass_(this.fullscreenDiv, 'pg-fullscreen');
+        removeClass_(this.fullscreenDiv, 'pg-fullscreen-view');
         if (this.adsManager) {
           this.adsManager.resize(
               this.getPlayerWidth(),

@@ -133,9 +133,11 @@
     justify-content: space-between;
 }
 
+/*
 .pg-fullscreen-div:before {
   content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
 }
+*/
 
 .pg-play-pause-div:before{
     content : url("https://ernitinjai.github.io/PGVSDK/pause.png");
@@ -173,7 +175,7 @@
   content : url("https://ernitinjai.github.io/PGVSDK/expand.png");
 }
 
-.pg-fullscreen:before {
+.pg-fullscreen-view:before {
   content : url("https://ernitinjai.github.io/PGVSDK/collapse.png");
 }
 
