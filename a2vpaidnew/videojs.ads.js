@@ -148,7 +148,6 @@ var
       // determine if the video element has loaded enough of the snapshot source
       // to be ready to apply the rest of the state
       tryToResume = function() {
-
         // tryToResume can either have been called through the `contentcanplay`
         // event or fired through setTimeout.
         // When tryToResume is called, we should make sure to clear out the other
@@ -311,9 +310,7 @@ var
 
       player.on(videoEvents, function redispatch(event) {
        // alert(event.type);
-       if (settings.debug) {
         document.getElementById("pg-sample-console").innerHTML = document.getElementById("pg-sample-console").innerHTML + '<br/>' + 'event type '+ event.type + ' playeradstate = '+player.ads.state ;
-      }
         if (player.ads.state === 'ad-playback') {
           triggerEvent('ad', event);
         } else if (player.ads.state === 'content-playback' && event.type === 'ended') {
@@ -715,7 +712,6 @@ var
 
     // kick off the fsm
     if (!player.paused()) {
-      alert('sadsadsd');
       // simulate a play event if we're autoplaying
       fsmHandler({type:'play'});
     }
