@@ -112,13 +112,6 @@ Ads.prototype.vastXML = function(vastResp,width,height,tagUrl) {
 
 };
 
-Ads.prototype.play = function () {
-  var videoArr = document.getElementsByTagName('video');
-  if (videoArr.length > 0) {
-      video = videoArr[0];
-      video.play();
-  }
-}
 
 Ads.prototype.log = function(message) {
   this.console.innerHTML = this.console.innerHTML + '<br/>' + message;
