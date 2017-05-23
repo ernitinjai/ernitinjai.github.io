@@ -329,26 +329,6 @@ pgads.getEventsCallback = function(eventsData,key) {
 		}
 	}
 }
-
-
-pgads.initAdpluginOpts =  function(width,height,tagUrl){
-	
-    document.getElementById("content_video").setAttribute("width", width);
-    document.getElementById("content_video").setAttribute("height", height);
-	
-    pgadPluginOpts = {
-              "adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
-              "adsEnabled": true,
-              "autoResize":true,
-              "verbosity":4,
-              //"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
-              "adTagUrl" :tagUrl
-              
-        };
-
-}
-
-
 //////AdsLoader
 pgads.AdsLoader = function (adDisplayContainer,player) {
 	this.player = player;
@@ -357,10 +337,17 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
 	
 	
 	this.requestAds = function (adRequest) {
-		 
-		var vastcli = this.player.vastClient(pgadPluginOpts);
+	pgadPluginOpts = {
+	      "adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
+	      "adsEnabled": true,
+	      "autoResize":true,
+	      "verbosity":4,
+	      "vpaidFlashLoaderPath":'/VPAIDFlash.swf',
+	      "adTagUrl":adRequest.adTagUrl    
+	};
+	  var vastclient = this.player.vastClient(pgadPluginOpts);
 
-		pgads.getEventsCallback(this.adsLoaderEvents,pgads.AdEvent.Type.ADS_MANAGER_LOADED)();
+	  pgads.getEventsCallback(this.adsLoaderEvents,pgads.AdEvent.Type.ADS_MANAGER_LOADED)();
 	};
 	this.contentComplete = function () {
           
