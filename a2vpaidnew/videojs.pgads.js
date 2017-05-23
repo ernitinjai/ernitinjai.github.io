@@ -22,7 +22,7 @@
     debug: true,
     timeout: 5000,
     prerollTimeout: 100,
-    adLabel: 'Advertisement',
+    adLabel: '',
     showControlsForJSAds: true
   };
 
