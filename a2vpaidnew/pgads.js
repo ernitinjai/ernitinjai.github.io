@@ -342,7 +342,7 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
 	      "adsEnabled": true,
 	      "autoResize":true,
 	      "verbosity":4,
-	      "vpaidFlashLoaderPath":'/VPAIDFlash.swf',
+	      //"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
 	      "adTagUrl":adRequest.adTagUrl    
 	};
 	  var vastclient = this.player.vastClient(pgadPluginOpts);
