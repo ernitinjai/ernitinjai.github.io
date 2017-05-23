@@ -864,7 +864,7 @@
      */
     this.setContentWithAdTag = function(contentSrc, adTag, playOnLoad) {
      // alert('setContentWithAdTag');
-      resetPGAds();
+      resetPGAds_();
       this.settings.adTagUrl = adTag ? adTag : this.settings.adTagUrl;
       changeSource_(contentSrc, playOnLoad);
     }.bind(this);
