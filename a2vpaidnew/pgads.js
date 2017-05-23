@@ -332,7 +332,9 @@ pgads.getEventsCallback = function(eventsData,key) {
 
 
 pgads.initAdpluginOpts =  function(width,height,tagUrl){
-
+	
+    document.getElementsByTagName("content_video")[0].setAttribute("width", width);
+    document.getElementsByTagName("content_video")[0].setAttribute("height", height);
 	
     pgadPluginOpts = {
               "adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
