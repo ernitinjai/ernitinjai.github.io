@@ -542,7 +542,7 @@
       if (remainingSeconds.toString().length < 2) {
         remainingSeconds = '0' + remainingSeconds;
       }
-      var podCount = ': ';
+      var podCount = ' ';
       if (isPod && (totalAds > 1)) {
         podCount = ' (' + adPosition + ' of ' + totalAds + '): ';
       }
