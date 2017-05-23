@@ -2,7 +2,50 @@ var Ads = function() {
 
    this.player = videojs('content_video');
    this.adResp = '';
+ // Remove controls from the player on iPad to stop native controls from stealing
+  // our click
+  var contentPlayer =  document.getElementById('content_video_html5_api');
+  if ((navigator.userAgent.match(/iPad/i) ||
+          navigator.userAgent.match(/Android/i)) &&
+      contentPlayer.hasAttribute('controls')) {
+    contentPlayer.removeAttribute('controls');
+  }
 
+  // Start ads when the video player is clicked, but only the first time it's
+  // clicked.
+  var startEvent = 'click';
+  if (navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/Android/i)) {
+    startEvent = 'touchend';
+  }
+  this.player.one(startEvent, this.bind(this, this.init));
+
+  this.options = {
+    id: 'content_video'
+  };
+
+  this.events = [
+    pgads.AdEvent.Type.ALL_ADS_COMPLETED,
+    pgads.AdEvent.Type.CLICK,
+    pgads.AdEvent.Type.COMPLETE,
+    pgads.AdEvent.Type.FIRST_QUARTILE,
+    pgads.AdEvent.Type.LOADED,
+    pgads.AdEvent.Type.MIDPOINT,
+    pgads.AdEvent.Type.PAUSED,
+    pgads.AdEvent.Type.STARTED,
+    pgads.AdEvent.Type.THIRD_QUARTILE,
+    pgads.AdEvent.Type.STOPPED,
+    pgads.AdEvent.Type.FULLSCREEN,
+    pgads.AdEvent.Type.LOAD_META_DATA
+    
+  ];
+
+  this.console = document.getElementById('pg-sample-console');
+  this.player.pgads(
+      this.options,
+      this.bind(this, this.adsManagerLoadedCallback));
+   
 };
 
 Ads.prototype.SAMPLE_AD_TAG = 'http://pubads.g.doubleclick.net/gampad/ads?' +
@@ -48,67 +91,20 @@ Ads.prototype.onAdEvent = function(event) {
 
 Ads.prototype.vastXML = function(vastResp,width,height,tagUrl) {
 
-   pgads.initAdpluginOpts(width,height,tagUrl);
-
-   // Remove controls from the player on iPad to stop native controls from stealing
-  // our click
-  var contentPlayer =  document.getElementById('content_video_html5_api');
-  if ((navigator.userAgent.match(/iPad/i) ||
-          navigator.userAgent.match(/Android/i)) &&
-      contentPlayer.hasAttribute('controls')) {
-    contentPlayer.removeAttribute('controls');
-  }
-
-  // Start ads when the video player is clicked, but only the first time it's
-  // clicked.
-  var startEvent = 'click';
-  if (navigator.userAgent.match(/iPhone/i) ||
-      navigator.userAgent.match(/iPad/i) ||
-      navigator.userAgent.match(/Android/i)) {
-    startEvent = 'touchend';
-  }
-  this.player.one(startEvent, this.bind(this, this.init));
-
-  this.options = {
-    id: 'content_video'
-  };
-
-  this.events = [
-    pgads.AdEvent.Type.ALL_ADS_COMPLETED,
-    pgads.AdEvent.Type.CLICK,
-    pgads.AdEvent.Type.COMPLETE,
-    pgads.AdEvent.Type.FIRST_QUARTILE,
-    pgads.AdEvent.Type.LOADED,
-    pgads.AdEvent.Type.MIDPOINT,
-    pgads.AdEvent.Type.PAUSED,
-    pgads.AdEvent.Type.STARTED,
-    pgads.AdEvent.Type.THIRD_QUARTILE,
-    pgads.AdEvent.Type.STOPPED,
-    pgads.AdEvent.Type.FULLSCREEN,
-    pgads.AdEvent.Type.LOAD_META_DATA
-    
-  ];
-
-  this.console = document.getElementById('pg-sample-console');
-  this.player.pgads(
-      this.options,
-      this.bind(this, this.adsManagerLoadedCallback));
-   
- this.adResp = 'xml'; //atob(vastResp);
-    if (this.adResp == '') {
-      this.onAdEvent('allAdsCompleted');
-      this.log('Error: please fill in an ad tag');
-  } else {
-    
-
-
+  
+ // this.adResp = atob(vastResp);
+ //  if (this.adResp == '' ) {
+ //      this.onAdEvent('allAdsCompleted');
+ //      this.log('Error: please fill in an ad tag');
+ //  } else {
     this.player.pgads.initializeAdDisplayContainer();
-
-    this.player.pgads.setContentWithAdsResponse(null, this.adResp, true);
-
-   
+    if(vastResp != 'undefined' && vastResp.length > 0) {
+        this.player.pgads.setContentWithAdsResponse(null, this.adResp, true);
+    } else {
+      this.player.pgads.setContentWithAdTag(null, tagUrl, true); 
+    }
     this.player.pgads.requestAds();
-  }
+ // }
 
 };
 
