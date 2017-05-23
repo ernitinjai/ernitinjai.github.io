@@ -110,7 +110,7 @@ Ads.prototype.vastXML = function(vastResp,width,height,tagUrl) {
 
 
 Ads.prototype.log = function(message) {
-  this.console.innerHTML = this.console.innerHTML + '<br/>' + message;
+  //this.console.innerHTML = this.console.innerHTML + '<br/>' + message;
 };
 
 Ads.prototype.bind = function(thisObj, fn) {
