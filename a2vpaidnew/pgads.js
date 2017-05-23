@@ -337,7 +337,6 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
 	
 	
 	this.requestAds = function (adRequest) {
-		alert(adRequest.adTagUrl);
 	pgadPluginOpts = {
 	      "adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
 	      "adsEnabled": true,
