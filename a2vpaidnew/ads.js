@@ -37,7 +37,7 @@ Ads.prototype.onAdEvent = function(event) {
  
   if (navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/iPad/i)) {
-      document.location.href = 'vpaid2imaevent://'+ event.type;
+      document.location.href = 'vpaidpgevent://'+ event.type;
       //alert('ios');
   } else if(navigator.userAgent.match(/Android/i)) {
      Android.showToast(''+ event.type);
