@@ -479,7 +479,7 @@
      * @private
      */
    var onAdLoaded_ = function(adEvent) {
-    alert('onAdLoaded_');
+    //alert('onAdLoaded_');
       if (!adEvent.isLinear()) {
         this.player.play();
       }
@@ -708,8 +708,10 @@
      * keeps the fullscreen-ness of the AdContainer in sync with the player.
      * @private
      */
-    var onFullscreenChange_ = function() {alert("here");
-      if (this.player.isFullscreen()) {alert('here');
+    var onFullscreenChange_ = function() {
+      //alert("here");
+      if (this.player.isFullscreen()) {
+        //alert('here');
         addClass_(this.fullscreenDiv, 'pg-fullscreen-view');
         removeClass_(this.fullscreenDiv, 'pg-non-fullscreen');
         if (this.adsManager) {
