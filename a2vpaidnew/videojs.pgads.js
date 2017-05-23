@@ -19,7 +19,7 @@
   };
 
   var pgads_defaults = {
-    debug: true,
+    debug: false,
     timeout: 5000,
     prerollTimeout: 100,
     adLabel: '',
