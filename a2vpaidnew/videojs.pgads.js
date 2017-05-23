@@ -421,12 +421,16 @@
      */
     this.onContentResumeRequested_ = function(adEvent) {
       
-      if (navigator.userAgent.match(/iPhone/i) ||
+     if (navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)) {
             //send java script error in case of mobile to stop error message while showing ad on mobile
-      this.pauseAd();
+        this.pauseAd();
+        this.adTrackingTimer = setInterval(
+            onAdPlayheadTrackerInterval_, 250);
+        // Don't bump container when controls are shown
+        removeClass_(this.adContainerDiv, 'bumpable-pg-ad-container');
        this.currentAd.isLinear();
-   } 
+   }
       
       this.adsActive = false;
       this.adPlaying = false;

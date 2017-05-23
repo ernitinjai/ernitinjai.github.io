@@ -37,11 +37,11 @@ Ads.prototype.onAdEvent = function(event) {
  
   if (navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/iPad/i)) {
-      //window.location.href = 'vpaid2imaevent://'+ event.type;
-    //alert('ios');
+      window.location.href = 'vpaid2imaevent://'+ event.type;
+      alert('ios');
   } else if(navigator.userAgent.match(/Android/i)) {
-    //Android.showToast(''+ event.type);
-    //alert('android');
+     Android.showToast(''+ event.type);
+     alert('android');
   }
   this.log('Ad event: ' + event.type);
 };
