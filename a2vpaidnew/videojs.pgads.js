@@ -134,14 +134,14 @@
       this.countdownDiv.style.display = this.showCountdown ? 'block' : 'none';
       this.playPauseDiv = document.createElement('div');
       assignControlAttributes_(this.playPauseDiv, 'pg-play-pause-div');
-//      addClass_(this.playPauseDiv, 'pg-playing');
+      addClass_(this.playPauseDiv, 'pg-playing');
       this.playPauseDiv.addEventListener(
           'click',
           onAdPlayPauseClick_,
           false);
       this.muteDiv = document.createElement('div');
       assignControlAttributes_(this.muteDiv, 'pg-mute-div');
-//      addClass_(this.muteDiv, 'pg-non-muted');
+      addClass_(this.muteDiv, 'pg-non-muted');
       this.muteDiv.addEventListener(
           'click',
           onAdMuteClick_,
@@ -166,7 +166,7 @@
       this.learnMoreDiv.innerHTML = "Learn More";
       this.fullscreenDiv = document.createElement('div');
       assignControlAttributes_(this.fullscreenDiv, 'pg-fullscreen-div');
-//      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
+      addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
       this.fullscreenDiv.addEventListener(
           'click',
           onAdFullscreenClick_,
@@ -704,9 +704,9 @@
      * keeps the fullscreen-ness of the AdContainer in sync with the player.
      * @private
      */
-    var onFullscreenChange_ = function() {
-      if (this.player.isFullscreen()) {
-        addClass_(this.fullscreenDiv, 'pg-fullscreen');
+    var onFullscreenChange_ = function() {alert("here");
+      if (this.player.isFullscreen()) {alert('here');
+        addClass_(this.fullscreenDiv, 'pg-fullscreen-view');
         removeClass_(this.fullscreenDiv, 'pg-non-fullscreen');
         if (this.adsManager) {
           this.adsManager.resize(
@@ -716,7 +716,7 @@
         }
       } else {
         addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
-        removeClass_(this.fullscreenDiv, 'pg-fullscreen');
+        removeClass_(this.fullscreenDiv, 'pg-fullscreen-view');
         if (this.adsManager) {
           this.adsManager.resize(
               this.getPlayerWidth(),
