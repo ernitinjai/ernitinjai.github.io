@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="lte-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <title>videojs-vast-vpaid plugin</title>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+        <meta name="viewport" content="width=device-width">
+            <!-- VideoJs required styles-->
+            <link rel="stylesheet" type="text/css" href="http://vjs.zencdn.net/5.2.1/video-js.css"/>
+            <!--<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8086/demo/videojs_4/video-js.css"/ -->
+            <!-- VideoJs.vast.vpaid required styles-->
+            <link rel="stylesheet" type="text/css" href="http://192.168.1.232/a2vpaidnew/videojs.vast.vpaid.css"/>
+            <link rel="stylesheet" type="text/css" href="http://192.168.1.232/a2vpaidnew/style.css"/>
+            
+            <!-- DEMO required styles-->
+            <link rel="stylesheet" type="text/css" href="http://192.168.1.232/a2vpaidnew/videojs.pgads.css"/>
+            <link rel="stylesheet" type="text/css" href="http://192.168.1.232/a2vpaidnew/videojs.ads.css"/>
+         
+            <!-- Web Fonts -->
+            
+            <!-- VideoJs required scripts-->
+            </head>
+    <body>
+        <div id="ima-sample-container">
+            <!-- <header>PG HTML5 SDK Advanced Demo</header>
+             
+             <center>
+             <label for="tag">Tag (<span id="sampleAdTag" class="urlLink">sample</span>):&nbsp;</label>
+             <input type="text" size="75" id="tagInput" />
+             </center> -->
+            
+            <video id="content_video"  class="video-js vjs-default-skin" playsinline>
+                    <!--<source src="http://127.0.0.1/SalesSDKVideo.mp4" type="video/mp4">-->
+                </video>               
+              <!-- <video id="example_video_1" class="video-js vjs-default-skin"
+                 controls preload="auto" width="640" height="264"
+                 poster="http://vjs.zencdn.net/v/oceans.png"
+                 data-setup='{
+                 "plugins": {
+                 "vastClient": {
+                 "adTagUrl": "https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25",
+                 "adCancelTimeout": 5000,
+                 "adsEnabled": true
+                 }
+                 }
+                 }'>
+                 <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'/>
+                 <source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm'/>
+                 <source src="http://vjs.zencdn.net/v/oceans.ogv" type='video/ogg'/>
+                 <p class="vjs-no-js">
+                 To view this video please enable JavaScript, and consider upgrading to a web browser that
+                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                 </p>
+                 </video>-->
+                
+            <!-- Declare a div where you want the companion to appear. Use
+             googletag.display() to make sure the ad is displayed. -->
+            <div id="pg-sample-companionDiv">
+                
+            </div>
+            
+            <!--<div id="pg-sample-console"> 
+            </div>-->
+            <!--  <div id="ima-sample-console">
+             Welcome to PG HTML5 SDK Demo!
+             </div> -->
+            <!-- VideoJs.vast.vpaid required scripts-->
+             <!-- VideoJs required scripts-->
+            <!--<script type="text/javascript" src="http://127.0.0.1:8086/demo/videojs_5/video.js"></script> -->
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/video.js"></script>
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/es5-shim.js"></script>
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/ie8fix.js"></script>
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/videojs_5.vast.vpaid.js"></script>
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/videojs.ads.js"></script>
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/videojs.pgads.js"></script>
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/pgads.js"></script>
+
+            <!-- DEMO required scripts -->
+            <script type="text/javascript" src="http://192.168.1.232/a2vpaidnew/ads.js"></script>
+            
+            <script type="text/javascript"> var ads = new Ads();</script>
+             <script type="text/javascript"> ads.executeVastTagUrl('https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25','30px','40px');</script>
+
+            <!-- <footer>Copyright (C) Personagraph</footer> -->
+        </div>
+        
+        
+    </body>
+    
+</html>
