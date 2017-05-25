@@ -127,9 +127,12 @@
 
 .pg-top-controls-div, .pg-controls-div {
     text-align: center;
+    display : -webkit-flex;
+    display : -ms-flex;
     display: flex;
     align-items: center;
     padding: 0 10px;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
 }
 
