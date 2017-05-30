@@ -332,25 +332,46 @@ pgads.getEventsCallback = function(eventsData,key) {
 	}
 }
 //////AdsLoader
-pgads.AdsLoader = function (adDisplayContainer,player) {
-	this.player = player;
-	this.adsLoaderEvents = [];
-    selfAdsLoader = this;
-	
-	
-	this.requestAds = function (adRequest) {
-	pgadPluginOpts = {
-	      "adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
-	      "adsEnabled": true,
-	      "autoResize":true,
-	      "verbosity":4,
-	      //"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
-	      "adTagUrl":adRequest.adTagUrl    
-	};
+this.requestAds = function (adRequest) {
+
+		alert("adTagXML 1 "+adRequest.adsResponse);
+
+		alert("adTagUrl "+adRequest.adTagUrl);
+
+		// if(adRequest.adTagUrl != 'undefined' || adRequest.adTagUrl.length > 0){
+
+			
+			
+		// 	pgadPluginOpts = {
+	 //      		"adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
+	 //      		"adsEnabled": true,
+	 //      		"autoResize":true,
+	 //      		"verbosity":4,
+	 //      		//"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
+	 //      		"adTagUrl":adRequest.adTagUrl    
+		// 	}
+
+		// }else { 
+
+			alert("adTagXML 2 "+adRequest.adsResponse);
+
+			pgadPluginOpts = {
+	      		"adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
+	      		"adsEnabled": true,
+	      		"autoResize":true,
+	      		"verbosity":4,
+	      		//"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
+	      		"adTagXML":adRequest.adsResponse    
+			};
+		//}
 	  var vastclient = this.player.vastClient(pgadPluginOpts);
 
 	  pgads.getEventsCallback(this.adsLoaderEvents,pgads.AdEvent.Type.ADS_MANAGER_LOADED)();
 	};
+
+	
+	
+	
 	this.contentComplete = function () {
           
 	};
