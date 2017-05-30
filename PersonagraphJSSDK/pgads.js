@@ -336,7 +336,7 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
 	this.player = player;
 	this.adsLoaderEvents = [];
     selfAdsLoader = this;
-    var pgadPluginOpts;
+    this.pgadPluginOpts;
 	
 	
 	
@@ -346,38 +346,46 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
 
 		alert("adTagUrl "+adRequest.adTagUrl);
 
-		// if(adRequest.adTagUrl != 'undefined' || adRequest.adTagUrl.length > 0){
+		
+
+		if(typeof adRequest.adTagUrl != 'undefined' ){
 
 			
 			
-		// 	pgadPluginOpts = {
-	 //      		"adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
-	 //      		"adsEnabled": true,
-	 //      		"autoResize":true,
-	 //      		"verbosity":4,
-	 //      		//"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
-	 //      		"adTagUrl":adRequest.adTagUrl    
-		// 	}
-
-		// }else { 
-
-			alert("adTagXML 2 "+adRequest.adsResponse);
-
-			pgadPluginOpts = {
+			this.pgadPluginOpts = {
 	      		"adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
 	      		"adsEnabled": true,
 	      		"autoResize":true,
 	      		"verbosity":4,
 	      		//"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
-	      		"adTagXML":adRequest.adsResponse    
+	      		"adTagUrl":adRequest.adTagUrl    
+			}
+
+		}else if(typeof adRequest.adsResponse != 'undefined' ) { 
+
+	
+			function requestVASTXML(callback) {
+    		//The setTimeout below is to simulate asynchrony
+   			 setTimeout(function(){
+        	callback(null, adRequest.adsResponse);
+    			}, 0);
+			}
+
+			this.pgadPluginOpts = {
+	      		"adCancelTimeout":20000,// Wait for ten seconds before canceling the ad.
+	      		"adsEnabled": true,
+	      		"autoResize":true,
+	      		"verbosity":4,
+	      		//"vpaidFlashLoaderPath":'/VPAIDFlash.swf',
+	      		"adTagXML":requestVASTXML    
 			};
-		//}
-	  var vastclient = this.player.vastClient(pgadPluginOpts);
+		}
+	  var vastclient = this.player.vastClient(this.pgadPluginOpts);
 
 	  pgads.getEventsCallback(this.adsLoaderEvents,pgads.AdEvent.Type.ADS_MANAGER_LOADED)();
 	};
 
-	
+
 	this.contentComplete = function () {
           
 	};
