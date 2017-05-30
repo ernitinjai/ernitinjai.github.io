@@ -331,8 +331,16 @@ pgads.getEventsCallback = function(eventsData,key) {
 		}
 	}
 }
-//////AdsLoader
-this.requestAds = function (adRequest) {
+////////AdsLoader
+pgads.AdsLoader = function (adDisplayContainer,player) {
+	this.player = player;
+	this.adsLoaderEvents = [];
+    selfAdsLoader = this;
+    var pgadPluginOpts;
+	
+	
+	
+	this.requestAds = function (adRequest) {
 
 		alert("adTagXML 1 "+adRequest.adsResponse);
 
@@ -368,6 +376,7 @@ this.requestAds = function (adRequest) {
 
 	  pgads.getEventsCallback(this.adsLoaderEvents,pgads.AdEvent.Type.ADS_MANAGER_LOADED)();
 	};
+
 
 	
 	
