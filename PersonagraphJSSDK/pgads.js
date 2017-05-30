@@ -331,7 +331,7 @@ pgads.getEventsCallback = function(eventsData,key) {
 		}
 	}
 }
-////////AdsLoader
+//////AdsLoader
 pgads.AdsLoader = function (adDisplayContainer,player) {
 	this.player = player;
 	this.adsLoaderEvents = [];
@@ -377,9 +377,6 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
 	  pgads.getEventsCallback(this.adsLoaderEvents,pgads.AdEvent.Type.ADS_MANAGER_LOADED)();
 	};
 
-
-	
-	
 	
 	this.contentComplete = function () {
           
