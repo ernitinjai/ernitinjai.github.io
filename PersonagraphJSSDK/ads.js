@@ -93,9 +93,9 @@ Ads.prototype.executeVastTagUrl = function(tagUrl,width,height) {
     this.player.pgads.initializeAdDisplayContainer();
     this.player.pgads.setContentWithAdTag(null, tagUrl, true); 
     this.player.pgads.requestAds();
-//    var elem = document.getElementsByClassName('video-js')[0];
-//    elem.style.width = width;
-//    elem.style.height = height;
+    var elem = document.getElementsByClassName('video-js')[0];
+    elem.style.width = width;
+    elem.style.height = height;
   }
 };
 
