@@ -81,6 +81,9 @@ Ads.prototype.executeVastXML = function(vastResp,width,height) {
     this.player.pgads.initializeAdDisplayContainer();
     this.player.pgads.setContentWithAdsResponse(null, adResp, true); 
     this.player.pgads.requestAds();
+     var elem = document.getElementsByClassName('video-js')[0];
+    elem.style.width = width;
+    elem.style.height = height;
   }
 };
 
