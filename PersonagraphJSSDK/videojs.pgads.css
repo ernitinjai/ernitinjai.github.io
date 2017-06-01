@@ -126,14 +126,53 @@
 }
 
 .pg-top-controls-div, .pg-controls-div {
+    display : table;
+    padding: 0 10px;
+/*
     text-align: center;
-    display : -webkit-flex;
-    display : -ms-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     align-items: center;
     padding: 0 10px;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+*/
+
+}
+
+.pg-play-pause-div{
+    display : table-cell !important;
+    vertical-align : middle;
+    text-align : left;
+}
+
+.pg-countdown-div{
+    display : table-cell !important;
+    vertical-align : middle;
+    text-align : center;
+}
+
+.pg-mute-div{
+    display : table-cell !important;
+    vertical-align : middle;
+    text-align : right;
+}
+
+.pg-learnmore-div{
+    display : table-cell !important;
+    vertical-align : middle;
+    text-align : left;
+}
+
+.pg-fullscreen-div{
+    display : table-cell !important;
+    vertical-align : middle;
+    text-align : right;
 }
 
 /*
