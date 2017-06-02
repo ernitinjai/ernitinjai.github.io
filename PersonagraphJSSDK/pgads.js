@@ -342,9 +342,9 @@ pgads.AdsLoader = function (adDisplayContainer,player) {
 	
 	this.requestAds = function (adRequest) {
 
-		alert("adTagXML 1 "+adRequest.adsResponse);
+		//alert("adTagXML 1 "+adRequest.adsResponse);
 
-		alert("adTagUrl "+adRequest.adTagUrl);
+		//alert("adTagUrl "+adRequest.adTagUrl);
 
 		
 
