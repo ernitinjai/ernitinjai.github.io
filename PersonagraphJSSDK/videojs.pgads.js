@@ -406,7 +406,7 @@
       if ((contentType === 'application/javascript') && !this.settings.showControlsForJSAds) {
         this.controlsDiv.style.display = 'none';
       } else {
-        this.controlsDiv.style.display = 'flex';
+        this.controlsDiv.style.display = 'table';
       }
 
       this.vjsControls.hide();
