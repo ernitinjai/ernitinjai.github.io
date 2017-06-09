@@ -505,6 +505,8 @@
             onAdPlayheadTrackerInterval_, 250);
         // Don't bump container when controls are shown
         removeClass_(this.adContainerDiv, 'bumpable-pg-ad-container');
+        removeClass_(this.player.el(), 'vjs-vast-ad-loading');
+
       } else {
         // Bump container when controls are shown
        addClass_(this.adContainerDiv, 'bumpable-pg-ad-container');
