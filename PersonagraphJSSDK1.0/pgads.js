@@ -282,7 +282,7 @@ pgads.AdsManager =  function(player){
 	});
 
 	this.player.on('vast.adStart', function() {
-		alert('vast.adstart');
+		//alert('vast.adstart');
 	    if(this.vast.vastResponse != 'undefined'); {
        		adManagerObj.vastResponse = this.vast.vastResponse;
     	}
