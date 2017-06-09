@@ -344,7 +344,7 @@
     var onAdsLoaderError_ = function(event) {
      // alert('onAdsLoaderError_');
       window.console.log('AdsLoader error: ' + event.getError());
-      document.getElementById("pg-sample-console").innerHTML = document.getElementById("pg-sample-console").innerHTML + '<br/>' + 'AdsLoader error: ' + event.getError();
+      //document.getElementById("pg-sample-console").innerHTML = document.getElementById("pg-sample-console").innerHTML + '<br/>' + 'AdsLoader error: ' + event.getError();
       this.adContainerDiv.style.display = 'none';
       if (this.adsManager) {
         this.adsManager.destroy();
