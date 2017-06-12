@@ -350,7 +350,7 @@ pgads.AdsManager =  function(player){
 					    case pgads.PGVideoAdQuartile.PGVideoAdQuartileFourth: 
 							if(currentPlayedPercentage >= 100.0) {
 								this.off('timeupdate');
-								adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED);
+								//adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED);
 							}
 					    break;  
 				    }  
