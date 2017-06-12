@@ -43,6 +43,18 @@ pgads.ViewMode = {
 	'FULLSCREEN' : 'fullscreen'
 }
 
+pgads.AdType = {
+	'VPAID' : 'application/javascript',
+	'VAST' : 'video/mp4'
+}
+
+pgads.PGVideoAdQuartile = {
+	'PGVideoAdQuartileFirst' : 0,
+    'PGVideoAdQuartileSecond' : 1,
+    'PGVideoAdQuartileThird' : 2,
+    'PGVideoAdQuartileFourth' : 3
+}
+
 pgads.AdErrorEvent = function (errorMsg) {
 	this.errorMsg = errorMsg;
 
@@ -93,8 +105,18 @@ pgads.AdEventInfo = function(eventType,adsManager) {
 	}
 
 	this.getContentType = function () {
+	if(typeof this.adsManager.vastResponse != 'undefined') {
+		if(adsManager.isVPAID(this.adsManager.vastResponse)) {
+			return 'application/javascript';
+		} else {
+			return 'video/mp4';
+		} 
+	} else {
 		return 'application/javascript';
 	}
+  }
+
+
 };
 
 pgads.AdEvent = {};
@@ -135,8 +157,8 @@ pgads.AdsManager =  function(player){
 	this.adPodInfo;
     this.currentPlayerTime;
     this.adCompleted;
-
 	var adManagerObj = this;
+	this.currentQuartileToBeSend = pgads.PGVideoAdQuartile.PGVideoAdQuartileFirst;
 
 
 	this.init = function(width,
@@ -235,7 +257,7 @@ pgads.AdsManager =  function(player){
 
 	this.player.on('vpaid.AdStarted', function() {
 	
-	if(this.vast.vastResponse != 'undefined'); {
+		if(this.vast.vastResponse != 'undefined'); {
        		adManagerObj.vastResponse = this.vast.vastResponse;
     	}
         if(this.vast.vastResponse.ads != 'undefined'); {
@@ -264,6 +286,7 @@ pgads.AdsManager =  function(player){
 	this.player.on('vpaid.AdVideoThirdQuartile', function() {
 		adManagerObj.sendCallback(pgads.AdEvent.Type.THIRD_QUARTILE);
 	});
+
 	this.player.on('vpaid.AdVideoComplete', function() {
 		adManagerObj.adCompleted = true;
 		adManagerObj.sendCallback(pgads.AdEvent.Type.COMPLETE);
@@ -282,7 +305,6 @@ pgads.AdsManager =  function(player){
 	});
 
 	this.player.on('vast.adStart', function() {
-
 	    if(this.vast.vastResponse != 'undefined'); {
        		adManagerObj.vastResponse = this.vast.vastResponse;
     	}
@@ -301,6 +323,39 @@ pgads.AdsManager =  function(player){
 		adManagerObj.sendCallback(pgads.AdEvent.Type.COMPLETE);
 	});
 
+	this.player.on('timeupdate' ,function() {
+		if(typeof adManagerObj.vastResponse != 'undefined') {
+			if(!adManagerObj.isVPAID(adManagerObj.vastResponse)) {
+				var currentPlayedPercentage = (this.currentTime() / this.duration()) * 100;
+				 switch(adManagerObj.currentQuartileToBeSend){  
+					    case pgads.PGVideoAdQuartile.PGVideoAdQuartileFirst:
+						    if(currentPlayedPercentage > 25.0) {
+							  adManagerObj.sendCallback(pgads.AdEvent.Type.FIRST_QUARTILE);
+							  adManagerObj.currentQuartileToBeSend = pgads.PGVideoAdQuartile.PGVideoAdQuartileSecond;
+							} 
+					     break;  
+					    case pgads.PGVideoAdQuartile.PGVideoAdQuartileSecond:
+							if(currentPlayedPercentage > 50.0) {
+								adManagerObj.sendCallback(pgads.AdEvent.Type.MIDPOINT);
+								 adManagerObj.currentQuartileToBeSend = pgads.PGVideoAdQuartile.PGVideoAdQuartileThird;
+							} 
+					    break;  
+					    case pgads.PGVideoAdQuartile.PGVideoAdQuartileThird: 
+						    if (currentPlayedPercentage > 75.0) {
+							  adManagerObj.sendCallback(pgads.AdEvent.Type.THIRD_QUARTILE);
+							  adManagerObj.currentQuartileToBeSend = pgads.PGVideoAdQuartile.PGVideoAdQuartileFourth;
+							}
+					    break;  
+					    case pgads.PGVideoAdQuartile.PGVideoAdQuartileFourth: 
+							if(currentPlayedPercentage >= 100.0) {
+								this.off('timeupdate');
+								adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED);
+							}
+					    break;  
+				    }  
+			}
+		}
+	});
  
    this.sendCallback = function(key) {
    		var adEvent = new pgads.AdEventInfo(key,this);
@@ -312,6 +367,18 @@ pgads.AdsManager =  function(player){
         	})(i);
         }
    };
+
+   this.isVPAID = function(vastResponse) {
+	    var i, len;
+	    var mediaFiles = vastResponse.mediaFiles;
+	    for (i = 0, len = mediaFiles.length; i < len; i++) {
+	    	var mediafile = mediaFiles[i];
+	         if(mediafile.type === pgads.AdType.VPAID){
+	          return true;
+	      	}
+	      }
+	    return false;
+  };
 
 	function getMethods(obj) {
 		  var result = [];
@@ -442,8 +509,3 @@ pgads.AdDisplayContainer = function (adContainerDiv,contentPlayer) {
 			
 	}
 }
-
-
-
-
-
