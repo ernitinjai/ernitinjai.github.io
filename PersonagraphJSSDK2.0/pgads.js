@@ -321,6 +321,7 @@ pgads.AdsManager =  function(player){
 	this.player.on('vast.adEnd', function() {
 	     adManagerObj.adCompleted = true;
 		adManagerObj.sendCallback(pgads.AdEvent.Type.COMPLETE);
+		adManagerObj.sendCallback(pgads.AdEvent.Type.CONTENT_RESUME_REQUESTED);
 	});
 
 	this.player.on('timeupdate' ,function() {
