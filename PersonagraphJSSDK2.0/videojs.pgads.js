@@ -164,6 +164,10 @@
       this.learnMoreDiv = document.createElement('div');
       assignControlAttributes_(this.learnMoreDiv, 'pg-learnmore-div');
       this.learnMoreDiv.innerHTML = "Learn More";
+      this.learnMoreDiv.addEventListener(
+            'click',
+            onLearnMoreClick_,
+            false);
       this.fullscreenDiv = document.createElement('div');
       assignControlAttributes_(this.fullscreenDiv, 'pg-fullscreen-div');
       addClass_(this.fullscreenDiv, 'pg-non-fullscreen');
@@ -708,6 +712,17 @@
         this.player.requestFullscreen();
       }
     }.bind(this);
+      
+    
+    var onLearnMoreClick_ = function(){
+        var userAgent = navigator.userAgent;
+        if(!(/webapp/.test(userAgent))){
+            var win = window.open("http://www.google.com", '_blank');
+            win.focus();
+        }else{
+            Andrdoid.showToast("http://www.google.com");
+        }
+    }.bind(this);
 
     /**
      * Listens for the video.js player to change its fullscreen status. This
@@ -888,7 +903,7 @@
       //alert('setContentWithAdsResponse');
      //TODO:
       resetPGAds_();
-
+alert(adsResponse);
       this.settings.adsResponse = adsResponse ? adsResponse : this.settings.adsResponse;
 
       changeSource_(contentSrc, playOnLoad);
