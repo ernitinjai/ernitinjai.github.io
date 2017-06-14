@@ -155,8 +155,9 @@ pgads.AdsManager =  function(player){
 	this.viewMode = pgads.ViewMode.NORMAL;
 	this.vastResponse;
 	this.adPodInfo;
-    this.currentPlayerTime;
-    this.adCompleted;
+        this.currentPlayerTime;
+        this.adCompleted;
+	this.adClickThroughUrl;
 	var adManagerObj = this;
 	this.currentQuartileToBeSend = pgads.PGVideoAdQuartile.PGVideoAdQuartileFirst;
 
@@ -168,6 +169,10 @@ pgads.AdsManager =  function(player){
 		this.height = height;
 		this.viewMode = viewMode;
 	};
+	
+	this.getClickthroughUrl = function () {
+	   return this.adClickThroughUrl;
+	}
 
 	this.setVolume = function(volume) {
 		this.volume = volume;
@@ -259,6 +264,7 @@ pgads.AdsManager =  function(player){
 	
 		if(this.vast.vastResponse != 'undefined'); {
        		adManagerObj.vastResponse = this.vast.vastResponse;
+		adManagerObj.adClickThroughUrl = this.vast.vastResponse.clickThrough;
     	}
         if(this.vast.vastResponse.ads != 'undefined'); {
     		adManagerObj.adPodInfo = this.vast.vastResponse.ads;
@@ -307,6 +313,7 @@ pgads.AdsManager =  function(player){
 	this.player.on('vast.adStart', function() {
 	    if(this.vast.vastResponse != 'undefined'); {
        		adManagerObj.vastResponse = this.vast.vastResponse;
+		adManagerObj.adClickThroughUrl = this.vast.vastResponse.clickThrough;
     	}
         if(this.vast.vastResponse.ads != 'undefined'); {
     		adManagerObj.adPodInfo = this.vast.vastResponse.ads;
