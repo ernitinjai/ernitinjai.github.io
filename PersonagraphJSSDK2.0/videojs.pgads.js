@@ -587,11 +587,11 @@
      * @private
      */
     var hideAdControls_ = function() {
-//      this.controlsDiv.style.height = '14px';
-//      this.playPauseDiv.style.display = 'none';
-//      this.muteDiv.style.display = 'none';
-//      this.sliderDiv.style.display = 'none';
-//      this.fullscreenDiv.style.display = 'none';
+      this.controlsDiv.style.height = '14px';
+     this.playPauseDiv.style.display = 'none';
+     this.muteDiv.style.display = 'none';
+      this.sliderDiv.style.display = 'none';
+     this.fullscreenDiv.style.display = 'none';
     }.bind(this);
 
     /**
