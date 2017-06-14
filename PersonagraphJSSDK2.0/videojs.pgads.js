@@ -720,7 +720,7 @@
             var win = window.open("http://www.google.com", '_blank');
             win.focus();
         }else{
-            Andrdoid.showToast("http://www.google.com");
+            Android.showToast("http://www.google.com");
         }
     }.bind(this);
 
