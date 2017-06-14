@@ -716,11 +716,12 @@
     
     var onLearnMoreClick_ = function(){
         var userAgent = navigator.userAgent;
+        var url = this.adsManager.getClickthroughUrl();
         if(!(/webapp/.test(userAgent))){
-            var win = window.open("http://www.google.com", '_blank');
+            var win = window.open(url, '_blank');
             win.focus();
-        }else{
-            Andrdoid.showToast("http://www.google.com");
+        }else if(userAgent.match(/Android/i)){
+            Android.showToast(url);
         }
     }.bind(this);
 
@@ -903,7 +904,7 @@
       //alert('setContentWithAdsResponse');
      //TODO:
       resetPGAds_();
-alert(adsResponse);
+
       this.settings.adsResponse = adsResponse ? adsResponse : this.settings.adsResponse;
 
       changeSource_(contentSrc, playOnLoad);
