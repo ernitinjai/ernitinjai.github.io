@@ -465,8 +465,10 @@
      */
     this.onContentResumeRequested_ = function(adEvent) {
 
-     showAdControls_();
-
+      //showAdControls_();
+      this.adContainerDiv.style.display = 'block';
+      this.adContainerTopDiv.style.display = 'block';
+      
      if (navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)) {
             //send java script error in case of mobile to stop error message while showing ad on mobile
