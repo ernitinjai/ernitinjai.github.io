@@ -319,8 +319,12 @@
         this.player.play();
       }
       //this.player.trigger('play');
+      //this.player.off('click');
       this.player.on('click', function (event) {
         showAdControls_(true);
+        if(this.currentType() != 'application/javascript') {
+          this.trigger('vpaid.AdClickThru');
+        } 
       });
 
     }.bind(this);
