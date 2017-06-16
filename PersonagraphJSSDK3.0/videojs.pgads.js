@@ -698,18 +698,21 @@
      * @private
      */
     var onAdMuteClick_ = function() {
+        
       if (this.adMuted) {
         addClass_(this.muteDiv, 'pg-non-muted');
         removeClass_(this.muteDiv, 'pg-muted');
         this.adsManager.setVolume(1);
+        this.player.volume(1);
         // Bubble down to content player
         this.player.muted(false);
         this.adMuted = false;
         this.sliderLevelDiv.style.width = this.player.volume() * 100 + "%";
-      } else {
+      } else { 
         addClass_(this.muteDiv, 'pg-muted');
         removeClass_(this.muteDiv, 'pg-non-muted');
         this.adsManager.setVolume(0);
+        this.player.volume(0);
         // Bubble down to content player
         this.player.muted(true);
         this.adMuted = true;
@@ -822,9 +825,9 @@
         this.adsManager.setVolume(newVolume);
       }
       // Update UI
-      if (this.newVolume == 0) {
+      if (newVolume == 0) {
         this.adMuted = true;
-        addClass_(this.muteDiv, 'pg-muted');
+        addClass_(this.muteDiv, 'pg-muted'); 
         removeClass_(this.muteDiv, 'pg-non-muted');
         this.sliderLevelDiv.style.width = '0%';
       } else {
