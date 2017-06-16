@@ -630,7 +630,7 @@
       if (isPod && (totalAds > 1)) {
         podCount = ' (' + adPosition + ' of ' + totalAds + '): ';
       }
-      if(typeof remainingSeconds != 'NaN') {
+      if(typeof remainingSeconds === 'NaN') {
          this.countdownDiv.innerHTML =
           this.settings.adLabel + podCount + '0:0';
       } else {
