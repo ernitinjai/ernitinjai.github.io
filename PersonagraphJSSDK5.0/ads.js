@@ -61,12 +61,16 @@ Ads.prototype.onAdEvent = function(event) {
  
   if (navigator.userAgent.match(/iPhone/i) ||
       navigator.userAgent.match(/iPad/i)) {
+      //comment below line in case of mobile browser
       document.location.href = 'vpaidpgevent://'+ event.type;
-      //alert('ios');
   } else if(navigator.userAgent.match(/Android/i)) {
-     Android.showToast(''+ event.type);
-     //alert('android');
+    if(event.type == pgads.AdEvent.Type.CLICK) {
+      Android.showToast(''+ event.type+ '~'+ event.getClickThruUrl());
+    } else {
+      Android.showToast(''+ event.type);
+    }
   }
+
   this.log('Ad event: ' + event.type);
 };
 
