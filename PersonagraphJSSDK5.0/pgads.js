@@ -115,7 +115,9 @@ pgads.AdEventInfo = function(eventType,adsManager) {
 		return 'application/javascript';
 	}
   }
-
+this.getClickThruUrl = function() {
+		return this.adsManager.vastResponse.clickThrough;
+	}
 
 };
 
