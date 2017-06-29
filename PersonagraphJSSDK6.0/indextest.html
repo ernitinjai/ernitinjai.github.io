@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>1 Col Portfolio - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+
+
+</head>
+
+<body style="padding-top:70px;">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+               <li>
+                    <a href="index.html">Banner</a>
+                </li>
+                <li class="active">
+                    <a href="indextest.html">Interstitial</a>
+                </li>
+                 <li>
+                    <a href="indexvideo.html">Video</a>
+                </li>
+                 <li>
+                    <a href="indexvideoint.html">VideoInterstitial</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+
+
+Internet Explorer has introduced an array of proprietary extensions to many of the standards, including HTML, CSS, and the DOM. This has resulted in a number of web pages that appear broken in standards-compliant web browsers and has introduced the need for a "quirks mode" to allow for rendering improper elements meant for Internet Explorer in these other browsers.
+
+Internet Explorer has introduced a number of extensions to the DOM that have been adopted by other browsers. These include the innerHTML property, which provides access to the HTML string within an element[citation needed] ; the XMLHttpRequest object, which allows the sending of HTTP request and receiving of HTTP response, and may be used to perform AJAX; and the designMode attribute of the contentDocument object, which enables rich text editing of HTML documents[citation needed] . Some of these functionalities were not possible until the introduction of the W3C DOM methods. Its Ruby character extension to HTML is also accepted as a module in W3C XHTML 1.1, though it is not found in all versions of W3C HTML.
+
+Microsoft submitted several other features of IE for consideration by the W3C for standardization. These include the 'behaviour' CSS property, which connects the HTML elements with JScript behaviours (known as HTML Components, HTC); HTML+TIME profile, which adds timing and media synchronization support to HTML documents (similar to the W3C XHTML+SMIL), and the VML vector graphics file format. However, all were rejected, at least in their original forms; VML was subsequently combined with PGML (proposed by Adobe and Sun), resulting in the W3C-approved SVG format, one of the few vector image formats being used on the web, which IE did not support until version 9.[56]
+
+Other non-standard behaviours include: support for vertical text, but in a syntax different from W3C CSS3 candidate recommendation, support for a variety of image effects[57] and page transitions, which are not found in W3C CSS, support for obfuscated script code, in particular JScript.Encode.[58] Support for embedding EOT fonts in web pages.[59]
+
+Favicon[edit]
+Support for favicons was first added in Internet Explorer 5.[60] Internet Explorer supports favicons in PNG, static GIF and native Windows icon formats. In Windows Vista and later, Internet Explorer can display native Windows icons that have embedded PNG files.[61][62]
+
+Usability and accessibility[edit]
+Internet Explorer makes use of the accessibility framework provided in Windows. Internet Explorer is also a user interface for FTP, with operations similar to that of Windows Explorer. Pop-up blocking and tabbed browsing were added respectively in Internet Explorer 6 and Internet Explorer 7. Tabbed browsing can also be added to older versions by installing MSN Search Toolbar or Yahoo Toolbar.
+
+Cache[edit]
+Main articles: Temporary Internet Files and Index.dat
+Internet Explorer caches visited content in the Temporary Internet Files folder to allow quicker access (or offline access) to previously visited pages. The content is indexed in a database file, known as Index.dat. Multiple Index.dat files exist which index different content—visited content, web feeds, visited URLs, cookies, etc.[63]
+
+Prior to IE7, clearing the cache used to clear the index but the files themselves were not reliably removed, posing a potential security and privacy risk. In IE7 and later, when the cache is cleared, the cache files are more reliably removed, and the index.dat file is overwritten with null bytes.
+
+Caching has been improved in IE9.[64]
+
+Group Policy[edit]
+Main article: Group Policy
+Internet Explorer is fully configurable using Group Policy. Administrators of Windows Server domains (for domain-joined computers) or the local computer can apply and enforce a variety of settings on computers that affect the user interface (such as disabling menu items and individual configuration options), as well as underlying security features such as downloading of files, zone configuration, per-site settings, ActiveX control behaviour and others. Policy settings can be configured for each user and for each machine. Internet Explorer also supports Integrated Windows Authentication.
+
+Architecture[edit]
+
+    <script src="https://ernitinjai.github.io/PersonagraphJSSDK6.0/pgsdk_dev.js"></script>
+    <script type="text/javascript" id="PG-1160-102731-00000352">
+        _pgjssdk.showAd({
+            pid: "PG-2-10101-00000631",
+            ad_width: "320",
+            ad_height: "50",
+            click_track_url: "[REPLACE_ME]",
+        });
+    </script>
+
+The architecture of IE8. Previous versions had a similar architecture, except that both tabs and the UI were within the same process. Consequently, each browser window could have only one "tab process".
+Internet Explorer uses a componentized architecture built on the Component Object Model (COM) technology. It consists of several major components, each of which is contained in a separate Dynamic-link library (DLL) and exposes a set of COM programming interfaces hosted by the Internet Explorer main executable, iexplore.exe:[65]
+
+WinInet.dll is the protocol handler for HTTP, HTTPS and FTP. It handles all network communication over these protocols.
+URLMon.dll is responsible for MIME-type handling and download of web content, and provides a thread-safe wrapper around WinInet.dll and other protocol implementations.
+MSHTML.dll houses the Trident rendering engine introduced in Internet Explorer 4, which is responsible for displaying the pages on-screen and handling the Document Object Model of the web pages. MSHTML.dll parses the HTML/CSS file and creates the internal DOM tree representation of it. It also exposes a set of APIs for runtime inspection and modification of the DOM tree. The DOM tree is further processed by a layout engine which then renders the internal representation on screen.
+IEFrame.dll contains the user interface and window of IE in Internet Explorer 7 and above.
+ShDocVw.dll provides the navigation, local caching and history functionalities for the browser.
+BrowseUI.dll is responsible for rendering the browser user interface such as menus and toolbars.[66]
+Internet Explorer does not include any native scripting functionality. Rather, MSHTML.dll exposes an API that permit a programmer to develop a scripting environment to be plugged-in and to access the DOM tree. Internet Explorer 8 includes the bindings for the Active Scripting engine, which is a part of Microsoft Windows and allows any language implemented as an Active Scripting module to be used for client-side scripting. By default, only the JScript and VBScript modules are provided; third party implementations like ScreamingMonkey (for ECMAScript 4 support) can also be used. Microsoft also makes available the Microsoft Silverlight runtime (not supported in Windows RT) that allows CLI languages, including DLR-based dynamic languages like IronPython and IronRuby, to be used for client-side scripting.
+
+Internet Explorer 8 introduces some major architectural changes, called Loosely Coupled IE (LCIE). LCIE separates the main window process (frame process) from the processes hosting the different web applications in different tabs (tab processes). A frame process can create multiple tab processes, each of which can be of a different integrity level; each tab process can host multiple web sites. The processes use asynchronous Inter-Process Communication to synchronize themselves. Generally, there will be a single frame process for all web sites. In Windows Vista with Protected Mode turned on, however, opening privileged content (such as local HTML pages) will create a new tab process as it will not be constrained by Protected Mode.[67]
+
+Extensibility[edit]
+See also: Component Object Model and Browser Helper Object
+Internet Explorer exposes a set of Component Object Model (COM) interfaces that allows add-ons to extend the functionality of the browser.[65] Extensibility is divided into two types: Browser extensibility and content extensibility. Browser extensibility involves adding context menu entries, toolbars, menu items or Browser Helper Objects (BHO). BHOs are used to extend the feature set of the browser, whereas the other extensibility options are used to expose that feature in the user interface. Content extensibility adds support for non-native content formats.[65] It allows Internet Explorer to handle new file formats and new protocols, e.g. WebM or SPDY.[65] In addition, web pages can integrate widgets known as ActiveX controls which run on Windows only but have vast potentials to extend the content capabilities; Adobe Flash Player and Microsoft Silverlight are examples.[65] Add-ons can be installed either locally, or directly by a web site.
+
+Since malicious add-ons can compromise the security of a system, Internet Explorer implements several safeguards. Internet Explorer 6 with Service Pack 2 and later feature an Add-on Manager for enabling or disabling individual add-ons, complemented by a "No Add-Ons" mode. Starting with Windows Vista, Internet Explorer and its BHOs run with restricted privileges and are isolated from the rest of the system. Internet Explorer 9 introduced a new component – Add-on Performance Advisor. Add-on Performance Advisor shows a notification when one or more of installed add-ons exceed a pre-set performance threshold. The notification appears in the Notification Bar when the user launches the browser. Windows 8 and Windows RT introduce a Metro-style version of Internet Explorer that is entirely sandboxed and does not run add-ons at all.[68] In addition, Windows RT cannot download or install ActiveX controls at all; although existing ones bundled with Windows RT still run in the traditional version of Internet Explorer.[68]
+
+Internet Explorer itself can be hosted by other applications via a set of COM interfaces. This can be used to embed the browser functionality inside a computer program or create Internet Explorer shells.[65]
+
+Security[edit]
+See also: Browser security
+Internet Explorer uses a zone-based security framework that groups sites based on certain conditions, including whether it is an Internet- or intranet-based site as well as a user-editable whitelist. Security restrictions are applied per zone; all the sites in a zone are subject to the restrictions.
+
+Internet Explorer 6 SP2 onwards uses the Attachment Execution Service of Microsoft Windows to mark executable files downloaded from the Internet as being potentially unsafe. Accessing files marked as such will prompt the user to make an explicit trust decision to execute the file, as executables originating from the Internet can be potentially unsafe. This helps in preventing accidental installation of malware.
+
+Internet Explorer 7 introduced the phishing filter, that restricts access to phishing sites unless the user overrides the decision. With version 8, it also blocks access to sites known to host malware. Downloads are also checked to see if they are known to be malware-infected.
+
+In Windows Vista, Internet Explorer by default runs in what is called Protected Mode, where the privileges of the browser itself are severely restricted—it cannot make any system-wide changes. One can optionally turn this mode off but this is not recommended. This also effectively restricts the privileges of any add-ons. As a result, even if the browser or any add-on is compromised, the damage the security breach can cause is limited.
+
+Patches and updates to the browser are released periodically and made available through the Windows Update service, as well as through Automatic Updates. Although security patches continue to be released for a range of platforms, most feature additions and security infrastructure improvements are only made available on operating systems which are in Microsoft's mainstream support phase.
+
+On December 16, 2008, Trend Micro recommended users switch to rival browsers until an emergency IE patch was released to fix a potential security risk which "could allow outside users to take control of a person's computer and steal their passwords". Microsoft representatives countered this recommendation, claiming that "0.02% of internet sites" were affected by the flaw.
+
+On December 17, 2008, a fix to the security problem above became available, with the release of the Security Update for Internet Explorer KB960714, which is available from Microsoft Windows Update's webpage. Microsoft has said that this update fixes the security risk found by Trend Micro the previous day.[69][70]
+
+In 2011, a report by Accuvant, funded by Google, rated the security (based on sandboxing) of Internet Explorer worse than Google Chrome but better than Mozilla Firefox.[71][72]
+
+Security vulnerabilities[edit]
+See also: Comparison of web browsers § Security and vulnerabilities
+Internet Explorer has been subjected to many security vulnerabilities and concerns: Much of the spyware, adware, and computer viruses across the Internet are made possible by exploitable bugs and flaws in the security architecture of Internet Explorer, sometimes requiring nothing more than viewing of a malicious web page in order to install themselves. This is known as a "drive-by install". There are also attempts to trick the user into installing malicious software by misrepresenting the software's true purpose in the description section of an ActiveX security alert.
+
+A number of security flaws affecting IE originated not in the browser itself, but ActiveX-based add-ons used by it. Because the add-ons have the same privilege as IE, the flaws can be as critical as browser flaws. This has led to the ActiveX-based architecture being criticized for being fault-prone. By 2005, some experts maintained that the dangers of ActiveX have been overstated and there were safeguards in place.[73] In 2006, new techniques using automated testing found more than a hundred vulnerabilities in standard Microsoft ActiveX components.[74] Security features introduced in Internet Explorer 7 mitigated some of these vulnerabilities.
+
+Internet Explorer in 2008, had a number of published security vulnerabilities. According to research done by security research firm Secunia, Microsoft did not respond as quickly as its competitors in fixing security holes and making patches available.[75] The firm also reported 366 vulnerabilities in ActiveX controls, an increase from the prior year.
+
+According to an October 2010 report in The Register, researcher Chris Evans had detected a known security vulnerability which, then dating back to 2008, had not been fixed for at least 600 days.[76] Microsoft says that it had known about this vulnerability but it was of very low severity as the victim web site must be configured in a special way for this attack to be feasible at all.[77]
+
+In December 2010, researchers were able to bypass the "Protected Mode" feature in Internet Explorer.[78]
+
+Vulnerability exploited in attacks on U.S. firms[edit]
+Main article: Operation Aurora
+
+Most used web browser by country as of June 2015, before the launch of Microsoft Edge.[79]
+Google Chrome
+Firefox
+Safari
+UC Browser
+Iron
+Internet Explorer
+Opera
+Android Browser
+Phantom
+No info
+In an advisory on January 14, 2010, Microsoft said that attackers targeting Google and other U.S. companies used software that exploits a security hole, which had already been patched, in Internet Explorer. The vulnerability affected Internet Explorer 6 on Windows XP and Server 2003, IE6 SP1 on Windows 2000 SP4, IE7 on Windows Vista, XP, Server 2008 and Server 2003, and IE8 on Windows 7, Vista, XP, Server 2003, and Server 2008 (R2).[80]
+
+The German government warned users against using Internet Explorer and recommended switching to an alternative web browser, due to the major security hole described above that was exploited in Internet Explorer.[81] The Australian and French Government issued a similar warning a few days later.[82][83][84][85]
+
+Major vulnerability across versions[edit]
+On April 26, 2014, Microsoft issued a security advisory relating to CVE-2014-1776, a vulnerability that could allow "remote code execution" in Internet Explorer versions 6 to 11.[86] On April 28, 2014, the United States Department of Homeland Security's United States Computer Emergency Readiness Team (US-CERT) released an advisory stating that the vulnerability could result in "the complete compromise" of an affected system.[87] US-CERT recommended reviewing Microsoft's suggestions to mitigate an attack or using an alternate browser until the bug is fixed.[88][89] The UK National Computer Emergency Response Team (CERT-UK) published an advisory announcing similar concerns and for users to take the additional step of ensuring their antivirus software is up-to-date.[90] Symantec, a cyber security firm, confirmed that "the vulnerability crashes Internet Explorer on Windows XP".[91] The vulnerability was resolved on May 1, 2014, with a security update.[92]
+
+Market adoption and usage share[edit]
+Ambox current red.svg
+This section needs to be updated. Please update this article to reflect recent events or newly available information. (July 2016)
+See also: History of Internet Explorer § Market adoption and usage share, and Usage share of web browsers
+
+Usage share of web browsers according to StatCounter
+
+Historical market share of Internet Explorer, 1994–2014
+The adoption rate of Internet Explorer seems to be closely related to that of Microsoft Windows, as it is the default web browser that comes with Windows. Since the integration of Internet Explorer 2.0 with Windows 95 OSR 1 in 1996, and especially after version 4.0's release in 1997, the adoption was greatly accelerated: from below 20% in 1996, to about 40% in 1998, and over
+
+80% in 2000. This made Microsoft the winner in the infamous 'first browser war' against Netscape. Netscape Navigator was the dominant browser during 1995 and until 1997, but rapidly lost share to IE starting in 1998, and eventually slipped behind in 1999. The integration of IE with Windows led to a lawsuit by AOL, Netscape's owner, accusing Microsoft of unfair competition. The infamous case was eventually won by AOL but by then it was too late, as Internet Explorer had already become the dominant browser.
+
+Internet Explorer peaked during 2002 and 2003, with about 95% share. Its first notable competitor after beating Netscape was Firefox from Mozilla, which itself was an offshoot from Netscape.
+
+Firefox 1.0 had surpassed Internet Explorer 5 in early 2005, with Firefox 1.0 at roughly 8 percent market share.[93]
+
+Approximate usage over time based on various usage share counters averaged for the year overall, or for the fourth quarter, or for the last month in the year depending on availability of reference.[94][95][96][97][98][99]
+
+According to StatCounter Internet Explorer's marketshare fell below 50% in September 2010.[100] In May 2012, it was announced that Google Chrome overtook Internet Explorer as the most used browser worldwide.
+
+Industry adoption[edit]
+Browser Helper Objects are also used by many search engine companies and third parties for creating add-ons that access their services, such as search engine toolbars. Because of the use of COM, it is possible to embed web-browsing functionality in third-party applications. Hence, there are a number of Internet Explorer shells, and a number of content-centric applications like RealPlayer also use Internet Explorer's web browsing module for viewing web pages within the applications.
+
+Removal[edit]
+Main article: Removal of Internet Explorer
+While a major upgrade of Internet Explorer can be uninstalled in a traditional way if the user has saved the original application files for installation, the matter of uninstalling the version of the browser that has shipped with an operating system remains a controversial one.
+
+The idea of removing a stock install of Internet Explorer from a Windows system was proposed during the United States v. Microsoft case. One of Microsoft's arguments during the trial was that removing Internet Explorer from Windows may result in system instability. Indeed, programs that depend on libraries installed by IE, including Windows help and support system, fail to function without IE. Before Windows Vista, it was not possible to run Windows Update without IE because the service used ActiveX technology, which no other web browser supports.
+
+Microsoft Edge, officially unveiled on January 21, 2015, has replaced Internet Explorer as the default browser on Windows 10. Internet Explorer is still installed in Windows 10 in order to maintain compatibility with older websites and intranet sites that require ActiveX and other Microsoft legacy web technologies.[101][102][103]
+
+Impersonation by malware[edit]
+The popularity of Internet Explorer has led to the appearance of malware abusing its name. On January 28, 2011, a fake Internet Explorer browser calling itself "Internet Explorer – Emergency Mode" appeared. It closely resembles the real Internet Explorer, but has fewer buttons and no search bar. If a user launches any other browser such as Google Chrome, Mozilla Firefox, Opera, Safari or the real Internet Explorer, this browser will pop-up instead. It also displays a fake error message, claiming that the computer is infected with malware and Internet Explorer has entered Emergency Mode. It blocks access to legitimate sites such as Google if infected users try to access them.[104][105]
+
+
+</div>
+
+
+</body>
+
+</html>

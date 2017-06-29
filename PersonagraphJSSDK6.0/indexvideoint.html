@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sample App</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://vjs.zencdn.net/5.2.1/video-js.css"/>
+    <link rel="stylesheet" type="text/css" href="https://ernitinjai.github.io/PersonagraphJSSDK6.0/pgjssdkstyle.min.css"/>
+
+
+</head>
+
+<body style="padding-top:70px;">
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.html">Banner</a>
+                </li>
+                <li>
+                    <a href="indextest.html">Interstitial</a>
+                </li>
+                 <li>
+                    <a href="indexvideo.html">Video</a>
+                </li>
+                 <li class="active">
+                    <a href="indexvideoint.html">VideoInterstitial</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">JS SDK Demo App 00000259</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5" id = "video-container">
+             
+            <!--
+        <script src="http://cdn.personagraph.com/sdk/pgjs.js"></script>
+        <script type="text/javascript" id="PG-2-228-00000222">
+            _pgjssdk.showAd({
+                pid:'PG-2-228-00000222',
+                ad_width:320,
+                ad_height:480,
+                ad_type:"int",
+                bundle_id:'INSERT-BUNDLEID',
+                device_id:'INSERT-DEVICEID',
+                click_track_url:'%%BLIS_CLICK_URL%%',
+                imp_track_url: '%%BLIS_IMPRESSION_URL%%',
+                cb:'%%BLIS_CACHE_BUSTER%%'
+            });
+        </script>
+
+
+      <script src="http://cdn.personagraph.com/sdk/pgjs.js"></script>
+            <script type="text/javascript" id="PG-1160-225709-00000212">
+                _pgjssdk.showAd({
+                    pid:'PG-1160-225709-00000212',
+                    ad_width:320,
+                    ad_height:480,
+                    ad_type:"int",
+                    bundle_id:'INSERT-BUNDLEID',
+                    device_id:'INSERT-DEVICEID',
+                    click_track_url:'%%BLIS_CLICK_URL%%',
+                    imp_track_url: '%%BLIS_IMPRESSION_URL%%',
+                    cb:'%%BLIS_CACHE_BUSTER%%'
+                });
+            </script>
+
+
+          <script src="http://cdn.personagraph.com/sdk/pgjs.js"></script>
+          <script type="text/javascript" id="PG-1160-281456-00000259">
+              _pgjssdk.showAd({
+                  pid: "PG-1160-281456-00000259",
+                  ad_width: "300",
+                  ad_height: "50",
+                  click_track_url: "REPLACE_ME",
+                  imp_track_url: "REPLACE_ME",
+                  cb: "REPLACE_ME"
+              });
+          </script>
+
+
+            //xAd 320x50
+
+            <script src="http://cdn.personagraph.com/sdk/pgjs.js"></script>
+            <script type="text/javascript" id="PG-1160-102731-00000395">
+                _pgjssdk.showAd({
+                    pid: "PG-1160-102731-00000395",
+                    ad_width: "320",
+                    ad_height: "50",
+                    click_track_url: "REPLACE_ME",
+                    imp_track_url: "REPLACE_ME",
+                    cb: "REPLACE_ME"
+                });
+            </script>
+
+
+            //Inmobi 300x50
+            <script src="http://cdn.personagraph.com/sdk/pgjs.js"></script>
+            <script type="text/javascript" id="PG-1160-102731-00000394">
+                _pgjssdk.showAd({
+                    pid: "PG-1160-102731-00000394",
+                    ad_width: "300",
+                    ad_height: "50",
+                    click_track_url: "REPLACE_ME",
+                    imp_track_url: "REPLACE_ME",
+                    cb: "REPLACE_ME"
+                });
+            </script>
+
+-->
+
+            <!-- MH India Today -->
+             <script type="text/javascript" src="https://ernitinjai.github.io/PersonagraphJSSDK6.0/video.js"></script>
+            <script type="text/javascript" src="https://ernitinjai.github.io/PersonagraphJSSDK6.0/pgjssdk.min.js"></script>
+            <script src="http://127.0.0.1/pgsdk_dev.js"></script>
+            <script type="text/javascript" id="pg-2-10143-00000450">
+             _pgjssdk.showVideoAd({
+                    pid: "PG-2-489417-00000430",
+                    ad_width: "300",
+                    ad_height: "50",
+                    click_track_url: "REPLACE_ME",
+                    imp_track_url: "REPLACE_ME",
+                    cb: "REPLACE_ME",
+                    name:'arun',
+                    age:20,
+                    adv_type:'VIDEO_INT'
+                });
+            </script>
+
+            <!--
+
+            <script type="text/javascript">
+                (function(s,u,o,i){
+                    for(i in o)o.hasOwnProperty(i)&&(u+='&'+i+'='+encodeURIComponent(o[i]));document.write('<script src="'+s+u+'"><'+'/script>');
+                }('https://s-cdn-tag.medialytics.com','/tag?format=dw',{
+                    tagID: "s2b87ae7dbb02498d8c128917c86b30c9",
+                    click: "%%CLICKURL%%$$_DESTINATION_URL_$$",
+                    osdevid: "%%USER_UID_OPTOUT%%",
+                    imppx: ""
+                }));
+            </script>
+            <noscript>
+                <a target="_blank" href="https://clk.medialytics.com/href?0.type=i&0.key=MMAdClickthrough&tagID=s2b87ae7dbb02498d8c128917c86b30c9&osdevid=%%USER_UID_OPTOUT%%&impunique=%%TIMESTAMP%%">
+                    <img src="https://c.medialytics.com/creative?type=s&tagID=s2b87ae7dbb02498d8c128917c86b30c9&osdevid=%%USER_UID_OPTOUT%%&impunique=%%TIMESTAMP%%" width="320" height="50"/>
+                </a>
+            </noscript>
+
+
+
+            <script type="text/javascript">
+                (function(s,u,o,i){
+                    for(i in o)o.hasOwnProperty(i)&&(u+='&'+i+'='+encodeURIComponent(o[i]));document.write('<script src="'+s+u+'"><'+'/script>');
+                }('https://s-cdn-tag.medialytics.com','/tag?format=dw',{
+                    tagID: "s58bd615084244e39b33c76397bf188ad",
+                    click: "$JS_ESC_CLICK_URL$$_DESTINATION_URL_$$",
+                    site: "PROPERTY_ID",
+                    osdevid: "$USER_ID",
+                    osoptout: "OPT_OUT_MACRO_HERE",
+                    pubimpid: "$IMPRESSION_ID",
+                    imppx: ""
+                }));
+            </script>
+            <noscript>
+                <a target="_blank" href="https://clk.medialytics.com/href?0.type=i&0.key=MMAdClickthrough&tagID=s58bd615084244e39b33c76397bf188ad&site=PROPERTY_ID&osdevid=$USER_ID&osoptout=OPT_OUT_MACRO_HERE&pubimpid=$IMPRESSION_ID&impunique=$IMP_CB">
+                    <img src="https://c.medialytics.com/creative?type=s&tagID=s58bd615084244e39b33c76397bf188ad&site=PROPERTY_ID&osdevid=$USER_ID&osoptout=OPT_OUT_MACRO_HERE&pubimpid=$IMPRESSION_ID&impunique=$IMP_CB" width="300" height="50"/>
+                </a>
+            </noscript>
+
+
+
+
+
+     <script type="text/javascript">
+         (function(s,n,u,o,i){
+             for(i in o)o.hasOwnProperty(i)&&(u+='&'+i+'='+encodeURIComponent(o[i]));document.write('<script src="'+(location.protocol=='https:'?s+u:n+u+decodeURI('" onerror="document.write(%27<script src=%5c%27')+s+u+decodeURI('%5c%27><%27+%27/script>%27)'))+'"><'+'/script>');
+         }('https://s-cdn-tag.medialytics.com','http://tag.medialytics.com','/tag?format=dw',{
+             tagID: "s5e641498c3314f7491abd760d57dc0fe",
+             click: "%%CLICK_URL_ESC_ESC%%$$_DESTINATION_URL_$$",
+             imppx: ""
+         }));
+     </script>
+     <noscript>
+         <a target="_blank" href="http://clk.medialytics.com/href?0.type=i&0.key=MMAdClickthrough&tagID=s5e641498c3314f7491abd760d57dc0fe&impunique=%%CACHEBUSTER%%">
+             <img src="http://c.medialytics.com/creative?type=s&tagID=s5e641498c3314f7491abd760d57dc0fe&impunique=%%CACHEBUSTER%%" width="300" height="50"/>
+         </a>
+     </noscript>
+
+     <script type="text/javascript" src="http://pixel.personagraph.com/collectData?partner_id=1160&name=rohit&age=29"></script>
+
+
+           <script src="pgjs.js"></script>
+           <script type="text/javascript" id="PG-1160-102731-00000351">
+               _pgjssdk.showAd({
+                   pid: "PG-1160-102731-00000351",
+                   ad_width: "320",
+                   ad_height: "50",
+                   click_track_url: "http://click.com",
+                   imp_track_url: "http://impression.com",
+                   cb: Date.now()
+               });
+           </script>
+
+
+           <script src="pgjs.js"></script>
+           <script type="text/javascript" id="PG-1160-102731-00000356">
+               _pgjssdk.showAd({
+                   pid: "PG-1160-102731-00000356",
+                   ad_width: "320",
+                   ad_height: "50",
+                   click_track_url: "http://click.com",
+                   imp_track_url: "http://impression.com",
+                   cb: Date.now()
+               });
+           </script>
+
+
+           <script src="pgjs.js"></script>
+           <script type="text/javascript" id="PG-1160-97699-00000352">
+               _pgjssdk.showAd({
+                   pid: "PG-1160-97699-00000352",
+                   ad_width: "320",
+                   ad_height: "50",
+                   click_track_url: "http://click.com",
+                   imp_track_url: "http://impression.com",
+                   cb: Date.now()
+               });
+           </script>
+
+
+           <script type='text/javascript'>
+               (function() {
+                   var creativeUrl = "http://cdn.personagraph.com/ads/creatives/320x50+copy.png",
+                       impUrl= "http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=19&mc=imp&pli=19110554&PluID=0&ord=" + Date.now() + "&rtu=-1",
+                       landingUrl= "https://www.iciciprulife.com";
+                   var i = document.createElement("img");
+                   i.src = impUrl;
+                   window._pgpubclppiix1 = function() {
+                       var clickUrl = "http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=19110554&PluID=0&ord=" + Date.now()
+                       var c = document.createElement("img");
+                       c.src = clickUrl;
+                   };
+                   document.write('<a href="' + landingUrl + '" target="_blank" onclick="_pgpubclppiix1()"><img src="' + creativeUrl + '"></a>')
+               })();
+           </script>
+
+           -->
+
+</div>
+        </div>
+    </div>
+</body>
+
+</html>
