@@ -561,12 +561,12 @@
         var initVideoAd = function (config,c) {
 
             var randomId = getRandomId();
-            var ads;
+            var adRequest;
             if(config.adv_type === 'VIDEO_INT') {
                     var videoContainer = document.getElementById('video-container');
                     createVideoEl(videoContainer);
                     config.adv_type = 'VIDEO';
-                    ads = new Ads();
+                    adRequest = new Ads();
                  
                     videoContainer.style.position = 'fixed';
                     videoContainer.style.top = "0px";
@@ -586,12 +586,12 @@
                     document.body.appendChild(closeButton);
                     showBGPopup();
             } else {
-                 ads = new Ads();
+                 adRequest = new Ads();
             }
 
             var url = getReqUrl(config);
 
-            ads.executeVastTagUrl(url,'300px','150px');
+            adRequest.executeVastTagUrl(url,'300px','150px');
             //ads.executeVastTagUrl('http://vid.springserve.com/vast/119201?w=1200&h=900&url=http%3A%2F%2Fedition.cnn.com%2F2017%2F06%2F29%2Famericas%2Fvenezuela-shortages-impact-lives%2Findex.html&cb=444342','300px','150px');
             //Pub Impression tracking
             if(config.imp_track_url){
