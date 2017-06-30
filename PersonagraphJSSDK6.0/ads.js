@@ -65,9 +65,9 @@ Ads.prototype.onAdEvent = function(event) {
       document.location.href = 'vpaidpgevent://'+ event.type;
   } else if(navigator.userAgent.match(/Android/i)) {
     if(event.type == pgads.AdEvent.Type.CLICK) {
-     // Android.showToast(''+ event.type+ '~'+ event.getClickThruUrl());
+      Android.showToast(''+ event.type+ '~'+ event.getClickThruUrl());
     } else {
-      //Android.showToast(''+ event.type);
+      Android.showToast(''+ event.type);
     }
   }
 
