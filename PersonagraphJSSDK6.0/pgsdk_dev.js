@@ -591,8 +591,8 @@
 
             var url = getReqUrl(config);
 
-            adRequest.executeVastTagUrl(url,'300px','150px');
-            //ads.executeVastTagUrl('http://vid.springserve.com/vast/119201?w=1200&h=900&url=http%3A%2F%2Fedition.cnn.com%2F2017%2F06%2F29%2Famericas%2Fvenezuela-shortages-impact-lives%2Findex.html&cb=444342','300px','150px');
+            //adRequest.executeVastTagUrl(url,'300px','150px');
+            ads.executeVastTagUrl('https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25','300px','150px');
             //Pub Impression tracking
             if(config.imp_track_url){
                 var imgTrack = document.createElement('img');
