@@ -561,11 +561,12 @@
         var initVideoAd = function (config,c) {
 
             var randomId = getRandomId();
+            var ads;
             if(config.adv_type === 'VIDEO_INT') {
                     var videoContainer = document.getElementById('video-container');
                     createVideoEl(videoContainer);
                     config.adv_type = 'VIDEO';
-                    var ads = new Ads();
+                    ads = new Ads();
                  
                     videoContainer.style.position = 'fixed';
                     videoContainer.style.top = "0px";
@@ -585,7 +586,7 @@
                     document.body.appendChild(closeButton);
                     showBGPopup();
             } else {
-                 var ads = new Ads();
+                 ads = new Ads();
             }
 
             var url = getReqUrl(config);
