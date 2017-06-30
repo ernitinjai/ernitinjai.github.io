@@ -592,7 +592,7 @@
             var url = getReqUrl(config);
 
             //adRequest.executeVastTagUrl(url,'300px','150px');
-            ads.executeVastTagUrl('https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25','300px','150px');
+            adRequest.executeVastTagUrl('https://rtr.innovid.com/r1.5554946ab01d97.36996823;cb=%25%CACHEBUSTER%25%25','300px','150px');
             //Pub Impression tracking
             if(config.imp_track_url){
                 var imgTrack = document.createElement('img');
