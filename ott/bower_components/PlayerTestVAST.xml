@@ -34,10 +34,10 @@
             </VideoClicks>
             <MediaFiles>
                 <MediaFile id="GDFP" delivery="progressive" bitrate="1230" width="852" height="480" type="video/webm" scalable="true" maintainAspectRatio="true">
-                    <![CDATA[http://htmlsamples.blob.core.windows.net/video/Windows_8_Cliffjumpers.webm]]>
+                    <![CDATA[https://htmlsamples.blob.core.windows.net/video/Windows_8_Cliffjumpers.webm]]>
                 </MediaFile>
                 <MediaFile id="GDFP" delivery="progressive" bitrate="1230" width="852" height="480" type="video/mp4" scalable="true" maintainAspectRatio="true">
-                    <![CDATA[http://htmlsamples.blob.core.windows.net/video/Windows_8_Cliffjumpers_852x480.mp4]]>
+                    <![CDATA[https://htmlsamples.blob.core.windows.net/video/Windows_8_Cliffjumpers_852x480.mp4]]>
                 </MediaFile>
             </MediaFiles>
         </Linear>
