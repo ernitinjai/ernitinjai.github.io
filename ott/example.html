@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Videojs Ad Scheduler</title>
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/video.js/dist/video-js.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <!-- endbuild -->
+  <link rel="stylesheet" href="bower_components/videojs-contrib-ads/src/videojs.ads.css" />
+  <link rel="stylesheet" href="bower_components/vast-button.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .info {
+      background-color: #eee;
+      border: thin solid #333;
+      border-radius: 3px;
+      padding: 0 5px;
+      text-align: center;
+      
+    }
+    .container {
+      margin: 40px auto;
+      text-align: center;
+    }
+    .container video {
+      vertical-align: middle;
+    }
+  </style>
+
+   <script>
+   var playVideo = function(list) {
+
+      var list_value = list.options[list.selectedIndex].value;
+
+      var options = {
+        debug: true,
+        plugins: {
+          ottAdScheduler: {
+            debug: true,
+            requestUrl: 'bower_components/PlayerTestVMAP.xml',
+            skipTime: 1,
+            allowSkip: true
+          }
+        }
+      };
+
+      var player = videojs('video', options).ready(function() {
+        var mplayer = this;
+        if(list.selectedIndex == 4){
+          mplayer.src([{src:list_value, type:'video/mp4'}]);
+       } else {
+          mplayer.src([{src:list_value, type:'application/x-mpegurl'}]);
+      }
+        mplayer.play();
+      });
+  }
+  </script>
+</head>
+<body>
+  <div class="info">
+    <!--p>
+      You can see the Video.js Ad Scheduler plugin in action below.
+      Look at the source of this page to see how to use it with your videos.
+    </p-->
+    <select name="List2" id="List2" onchange="playVideo(this)">
+      <option>Select an option</option>
+      <option>https://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8</option>
+      <option>https://acaooyalahd2-lh.akamaihd.net/i/TBN04_delivery@186242/master.m3u8</option>
+      <option>http://esioslive6-i.akamaihd.net/hls/live/202874/AL_P_ESP1_INTER_ENG/playlist_1000.m3u8</option>
+      <option>https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4</option>
+
+    </select>
+  </div>
+  <div class="container">
+    <video id="video"
+           class="video-js vjs-default-skin vjs-big-play-centered"
+           height="480"
+           width="720"
+           controls autoplay playsinline muted>
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+  </div>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/video.js/dist/video.js"></script>
+  <script src="bower_components/vmap-client-js/vmap-client.js"></script>
+  <script src="bower_components/vast-client-js/vast-client.js"></script>
+  <script src="bower_components/videojs-contrib-ads/src/videojs.ads.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- js extensions out of bower auto management -->
+  <script src="bower_components/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+  <!-- js extensions out of bower auto management -->
+
+  <!-- build:js({.tmp,src}) scripts/scripts.js -->
+  <script src="bower_components/videojs-ad-scheduler.js"></script>
+  <!-- endbuild -->
+ 
+</body>
+</html>
