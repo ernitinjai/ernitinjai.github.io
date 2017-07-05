@@ -53,7 +53,7 @@
 
       var player = videojs('video', options).ready(function() {
         var mplayer = this;
-        if(list.selectedIndex == 4){
+        if(list.selectedIndex == 3){
           mplayer.src([{src:list_value, type:'video/mp4'}]);
        } else {
           mplayer.src([{src:list_value, type:'application/x-mpegurl'}]);
