@@ -42,7 +42,7 @@
 <vmap:AdBreak breakType="linear" breakId="mymidpod" timeOffset="start">
     <vmap:AdSource allowMultipleAds="true" followRedirects="true" id="2">
         <vmap:AdTagURI templateType="vast3">
-            <![CDATA[./bower_components/PlayerTestVASTPod.xml]]>
+            <![CDATA[https://ernitinjai.github.io/ott/bower_components/PlayerTestVASTPod.xml]]>
         </vmap:AdTagURI>
     </vmap:AdSource>
     <vmap:TrackingEvents>
@@ -61,7 +61,7 @@
 <vmap:AdBreak breakType="linear" breakId="mymid2" timeOffset="00:00:41.2">
     <vmap:AdSource allowMultipleAds="true" followRedirects="true" id="3">
         <vmap:AdTagURI templateType="vast3">
-            <![CDATA[./bower_components/PlayerTestVAST.xml]]>
+            <![CDATA[https://ernitinjai.github.io/ott/bower_components/PlayerTestVAST.xml]]>
         </vmap:AdTagURI>
     </vmap:AdSource>
     <vmap:Extensions>
