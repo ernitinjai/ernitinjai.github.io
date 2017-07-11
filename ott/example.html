@@ -5,35 +5,154 @@
   <title>Videojs Ad Scheduler</title>
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/video.js/dist/video-js.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/ott/bower_components/video.js/dist/video-js.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <!-- endbuild -->
-  <link rel="stylesheet" href="bower_components/videojs-contrib-ads/src/videojs.ads.css" />
-  <link rel="stylesheet" href="bower_components/vast-button.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/ott/bower_components/videojs-contrib-ads/src/videojs.ads.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/ott/bower_components/vast-button.css"/>
 
   <style>
     body {
       font-family: Arial, sans-serif;
-    }
+/*      height: 700px;
+*/    }
     .info {
       background-color: #eee;
       border: thin solid #333;
       border-radius: 3px;
       padding: 0 5px;
       text-align: center;
-      
-    }
-    .container {
-      margin: 40px auto;
-      text-align: center;
-    }
-    .container video {
-      vertical-align: middle;
-    }
-  </style>
 
+    }
+     .vjs-tech video,.video-js video,.container div,.container video{
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .container {
+      margin: 10px auto;
+      text-align: center;
+      height: 100%;
+    }
+
+   .container .vast-skip-button, .container .vast-skip-button.enabled{
+      height: 4% !important;
+      width: 15% !important;
+    }
+
+    /* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  /* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* STYLES GO HERE */
+  body {
+          height: 700px;
+  }
+}
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* STYLES GO HERE */
+  body {
+          height: 700px;
+  }
+}
+ 
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+ 
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+  body {
+          height: 350px;
+  }
+}
+    
+  </style>
    <script>
    var playVideo = function(list) {
 
@@ -44,7 +163,7 @@
         plugins: {
           ottAdScheduler: {
             debug: true,
-            requestUrl: 'bower_components/PlayerTestVMAP.xml',
+            requestUrl: 'http://127.0.0.1/ott/bower_components/PlayerTestVMAP.xml',
             skipTime: 1,
             allowSkip: true
           }
@@ -62,9 +181,33 @@
       });
   }
   </script>
+  <script>
+   var autoPlayVideo = function(list) {
+
+      var options = {
+        debug: true,
+        plugins: {
+          ottAdScheduler: {
+            debug: true,
+            requestUrl: 'http://127.0.0.1/ott/bower_components/PlayerTestVMAP.xml',
+            skipTime: 1,
+            allowSkip: true
+          }
+        }
+      };
+
+      var player = videojs('video', options).ready(function() {
+        var mplayer = this;
+        mplayer.usingNativeControls(false);
+        mplayer.src([{src:'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', type:'video/mp4'}]);
+        mplayer.play(); 
+
+        });
+  }
+  </script>
 </head>
 <body>
-  <div class="info">
+  <!--div class="info">
     <!--p>
       You can see the Video.js Ad Scheduler plugin in action below.
       Look at the source of this page to see how to use it with your videos.
@@ -73,36 +216,56 @@
       <option>Select an option</option>
       <option>https://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8</option>
       <option>https://acaooyalahd2-lh.akamaihd.net/i/TBN04_delivery@186242/master.m3u8</option>
-      <option>https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4</option>
-
+      <option>http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4</option>
     </select>
-  </div>
   <div class="container">
     <video id="video"
-           class="video-js vjs-default-skin vjs-big-play-centered"
-           height="480"
-           width="720"
-           controls autoplay playsinline muted>
-      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+           class="video-js vjs-default-skin"
+           height="100%"
+           width="100%"  autoplay muted playsinline>
     </video>
   </div>
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="bower_components/video.js/dist/video.js"></script>
-  <script src="bower_components/vmap-client-js/vmap-client.js"></script>
-  <script src="bower_components/vast-client-js/vast-client.js"></script>
-  <script src="bower_components/videojs-contrib-ads/src/videojs.ads.js"></script>
+  <script src="http://127.0.0.1/ott/bower_components/video.js/dist/video.js"></script>
+  <script src="http://127.0.0.1/ott/bower_components/vmap-client-js/vmap-client.js"></script>
+  <script src="http://127.0.0.1/ott/bower_components/vast-client-js/vast-client.js"></script>
+  <script src="http://127.0.0.1/ott/bower_components/videojs-contrib-ads/src/videojs.ads.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- js extensions out of bower auto management -->
-  <script src="bower_components/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+  <script src="http://127.0.0.1/ott/bower_components/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
   <!-- js extensions out of bower auto management -->
 
   <!-- build:js({.tmp,src}) scripts/scripts.js -->
-  <script src="bower_components/videojs-ad-scheduler.js"></script>
-  <!-- endbuild -->
+  <script src="http://127.0.0.1/ott/bower_components/videojs-ad-scheduler.js"></script>
+  <!-- endbuild --
+   <script>
+
+   setTimeout(function(){ 
+    var options = {
+        debug: true,
+        plugins: {
+          ottAdScheduler: {
+            debug: true,
+            requestUrl: 'http://127.0.0.1/ott/bower_components/PlayerTestVMAP.xml',
+            skipTime: 1,
+            allowSkip: true
+          }
+        }
+      };
+
+      var player = videojs('video', options).ready(function() {
+        var mplayer = this;
+        mplayer.src([{src:'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', type:'video/mp4'}]);
+        mplayer.play(); 
+
+        }); }, 3000);
+
+
+  </script-->
  
 </body>
 </html>
