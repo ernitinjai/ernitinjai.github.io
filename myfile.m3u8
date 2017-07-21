@@ -12,7 +12,7 @@ https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/seg
 #EXTINF:17.2,
 https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/segment_7.ts
 #EXT-X-CUE-OUT-CONT:ElapsedTime=17.2,Duration=17.2,SCTE35=/DAlAAAAAAAAAP/wFAUAAAABf+//wpiQkv4ARKogAAEBAQAAQ6sodg==
-#EXTINF:9.97667,	
+#EXTINF:9.97667,
 https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/segment_3.ts
 #EXTINF:9.97667,
 https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/segment_4.ts
