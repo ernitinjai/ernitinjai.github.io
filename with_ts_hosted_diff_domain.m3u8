@@ -1,0 +1,18 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-TARGETDURATION:10
+#EXT-X-MEDIA-SEQUENCE:0
+#EXTINF:9.97667
+https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/segment_1.ts
+#EXTINF:9.97667
+https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/segment_2.ts
+#EXT-X-DISCONTINUITY
+#EXTINF:3.0,Example new Song
+http://192.168.1.167/mpt-200309161700-clip.ts
+#EXT-X-DISCONTINUITY
+#EXTINF:9.97667
+https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/segment_4.ts
+#EXTINF:9.97667
+https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/180_250000/hls/segment_5.ts
+#EXT-X-ENDLIST
