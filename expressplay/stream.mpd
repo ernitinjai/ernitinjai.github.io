@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<MPD mediaPresentationDuration="PT15.280S" minBufferTime="PT9.40S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:cenc="urn:mpeg:cenc:2013" xmlns:mas="urn:marlin:mas:1-0:services:schemas:mpd">
+  <!-- Created with Bento4 mp4-dash.py, VERSION=1.8.0-615 -->
+  <Period>
+    <!-- Video -->
+    <AdaptationSet maxHeight="540" maxWidth="960" mimeType="video/mp4" minHeight="540" minWidth="960" segmentAlignment="true" startWithSAP="1">
+      <!-- MPEG Common Encryption -->
+      <ContentProtection cenc:default_KID="43215678-1234-1234-1234-123412341234" schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc"/>
+      <!-- Marlin -->
+      <ContentProtection schemeIdUri="urn:uuid:5E629AF5-38DA-4063-8977-97FFBD9902D4">
+        <mas:MarlinContentIds>
+          <mas:MarlinContentId>urn:marlin:kid:43215678123412341234123412341234</mas:MarlinContentId>
+        </mas:MarlinContentIds>
+      </ContentProtection>
+      <SegmentTemplate duration="9400" initialization="$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
+      <Representation bandwidth="2209404" codecs="avc1.4D4028" frameRate="1800000/72379" height="540" id="video/avc1" scanType="progressive" width="960"/>
+    </AdaptationSet>
+    <!-- Audio -->
+    <AdaptationSet lang="en" mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
+      <!-- MPEG Common Encryption -->
+      <ContentProtection cenc:default_KID="43215678-1234-1234-1234-123412341234" schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc"/>
+      <!-- Marlin -->
+      <ContentProtection schemeIdUri="urn:uuid:5E629AF5-38DA-4063-8977-97FFBD9902D4">
+        <mas:MarlinContentIds>
+          <mas:MarlinContentId>urn:marlin:kid:43215678123412341234123412341234</mas:MarlinContentId>
+        </mas:MarlinContentIds>
+      </ContentProtection>
+      <SegmentTemplate duration="9400" initialization="$RepresentationID$/init.mp4" media="$RepresentationID$/seg-$Number$.m4s" startNumber="1" timescale="1000"/>
+      <Representation audioSamplingRate="48000" bandwidth="170714" codecs="mp4a.40.2" id="audio/en/mp4a">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
