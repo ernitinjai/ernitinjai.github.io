@@ -1,0 +1,76 @@
+<VAST version="2.0">
+<Ad id="1" sequence="99">
+<InLine>
+<AdSystem version="1.0">PGAxis</AdSystem>
+<AdTitle>
+<![CDATA[ River Wind Casino ]]>
+</AdTitle>
+<Description>
+<![CDATA[ River Wind Casino ]]>
+</Description>
+<Impression>
+<![CDATA[
+https://axisimp.personagraph.com/ad/med/mask?id=ry4k8z__--66396-2481&event_type=impression&latency=112&med1time=5&dpTime=117&med2time=8&respTime=1503304062214
+]]>
+</Impression>
+<Error>
+<![CDATA[
+https://axisimp.personagraph.com/ad/med/mask?id=ry4k8z__--66396-2481&event_type=error&latency=112
+]]>
+</Error>
+<Creatives>
+<Creative>
+<Linear>
+<Duration>00:00:30</Duration>
+<TrackingEvents>
+<Tracking event="firstQuartile">
+<![CDATA[
+https://axisimp.personagraph.com/ad/med/mask?id=ry4k8z__--66396-2481&event_type=tracking&event=firstQuartile&latency=112
+]]>
+</Tracking>
+<Tracking event="midpoint">
+<![CDATA[
+https://axisimp.personagraph.com/ad/med/mask?id=ry4k8z__--66396-2481&event_type=tracking&event=midpoint&latency=112
+]]>
+</Tracking>
+<Tracking event="thirdQuartile">
+<![CDATA[
+https://axisimp.personagraph.com/ad/med/mask?id=ry4k8z__--66396-2481&event_type=tracking&event=thirdQuartile&latency=112
+]]>
+</Tracking>
+<Tracking event="complete">
+<![CDATA[
+https://axisimp.personagraph.com/ad/med/mask?id=ry4k8z__--66396-2481&event_type=tracking&event=complete&latency=112
+]]>
+</Tracking>
+</TrackingEvents>
+<VideoClicks>
+<ClickTracking>
+<![CDATA[
+https://axisimp.personagraph.com/ad/med/mask?id=ry4k8z__--66396-2481&event_type=click
+]]>
+</ClickTracking>
+</VideoClicks>
+<MediaFiles>
+<MediaFile type="video/mp4" width="1024" height="576" delivery="progressive" id="95" bitrate="1467" scalable="true" maintainAspectRatio="true">
+<![CDATA[
+https://cdn.personagraph.com/ads/ibc/4_RiverWindCasino_1024x576_bitrate1467.mp4
+]]>
+</MediaFile>
+<MediaFile type="video/mp4" width="1280" height="720" delivery="progressive" id="96" bitrate="3071" scalable="true" maintainAspectRatio="true">
+<![CDATA[
+https://cdn.personagraph.com/ads/ibc/4_RiverWindCasino_1280x720_bitrate3071.mp4
+]]>
+</MediaFile>
+<MediaFile type="video/mp4" width="720" height="406" delivery="progressive" id="97" bitrate="702" scalable="true" maintainAspectRatio="true">
+<![CDATA[
+https://cdn.personagraph.com/ads/ibc/4_RiverWindCasino_720x406_bitrate702.mp4
+]]>
+</MediaFile>
+</MediaFiles>
+</Linear>
+</Creative>
+</Creatives>
+</InLine>
+</Ad>
+</VAST>
