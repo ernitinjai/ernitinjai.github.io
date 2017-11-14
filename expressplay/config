@@ -1,0 +1,28 @@
+{
+    "apiVersion": "1.0.1",
+    "update": "true",
+    "epocTime": "1234567890123",
+    "configuration": [{
+        "streamIDs": ["SID-CLINET-231345"],
+        "adsEnabled": "yes",
+        "adOnDemand": "yes",
+        "adconfig": {
+            "adSlotsMili": [{
+                "time": 30100,
+                "duration": 3000,
+                "price": 50
+            }, {
+                "time": 500300,
+                "duration": 3000,
+                "price": 50
+            }],
+            "adFreqMili": 300500,
+            "adDurationMili": 310,
+            "isContentReplacement": true,
+            "adOverPlayAllowed": true,
+            "adOverPlayMaxDuration": 5000,
+            "adUnderPlayAllowed": true,
+            "adUnderPlayMaxDuration": 5000
+        }
+    }]
+}
